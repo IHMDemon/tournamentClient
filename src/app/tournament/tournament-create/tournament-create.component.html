@@ -3,32 +3,33 @@
 <!-- <input type = "text" [(disabled)] = "newTask.title"> -->
 <hr>
 <div>
-  <label for  = "tournament-title">Tournament Title</label>
-  <input type = "text">
+  <label for  = "tournament-title">Tournament Title: </label>
+  <input type = "text" [(disabled)] = "newTournament.tournament-title" placeholder = "some tournament name">
 </div>
 <br>
 <br>
-<br>
 <div>
-  <label for  = "tournament-description">Tournament Description</label>
-  <input type = "text">
+  <label for  = "tournament-description">Tournament description: </label>
+  <input type = "text" [(disabled)] = "newTournament.tournament-description" placeholder = "what is this about?">
 </div>
 <br>
 <br>
-<br>
 <div>
-  <label for  = "tournament-type">Tournament Type</label>
-  <input type = "text">
+  <label for  = "tournament-type">Tournament type: </label>
+  <input type = "text" [(disabled)] = "newTournament.tournament-type" placeholder = "type of tourney?">
 </div>
 <br>
 <br>
-<br>
 <div>
-  <label for  = "tournament-rules">Tournament Rules</label>
-  <input type = "text">
+  <label for  = "tournament-rules">Tournament rules: </label>
+  <input type = "text" [(disabled)] = "newTournament.tournament-rules" placeholder = "wut u rules m8?">
+</div>
+<div>
+  <label for  = "team-quantity">Number of teams: </label>
+  <input type = "text" [(disabled)] = "newTournament.team-quantity" placeholder = "u wot m8?">
 </div>
 <hr>
-<button (click)="createTournament()">Submit New Tournament</button>
+<button (click)="tryToCreateTournament(theTournament)">Submit New Tournament</button>
 
 <!-- LIST OF TEAMS -->
 <!--  <div *ngFor = "let team of teams">
