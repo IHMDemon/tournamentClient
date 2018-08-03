@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { TournamentBracketComponent } from './tournament-bracket/tournament-bracket.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TournamentBracketComponent
   ],
   imports: [
     BrowserModule
