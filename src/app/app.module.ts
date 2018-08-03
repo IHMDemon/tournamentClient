@@ -12,8 +12,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     AppComponent,
     TournamentBracketComponent,
     TournamentComponent,
-    TournamentCreateComponent
-    NavBarComponent
+    TournamentCreateComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule
