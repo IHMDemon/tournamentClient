@@ -5,6 +5,7 @@ import { TournamentBracketComponent } from './tournament-bracket/tournament-brac
 import { TournamentComponent } from './tournament/tournament.component';
 import { TournamentCreateComponent } from './tournament/tournament-create/tournament-create.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { UsersComponentComponent } from './users/users-component/users-component.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     TournamentComponent,
     TournamentCreateComponent,
     NavBarComponent,
+    UsersComponentComponent,
   ],
   imports: [
     BrowserModule
