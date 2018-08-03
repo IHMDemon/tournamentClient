@@ -4,32 +4,32 @@
 <hr>
 <div>
   <label for  = "tournament-title">Tournament Title: </label>
-  <input type = "text" [(disabled)] = "newTournament.tournament-title" placeholder = "some tournament name">
+  <input type = "text" [(ngModel)] = "newTournament.tournamentName" name = "tournament" placeholder = "some tournament name">
 </div>
 <br>
 <br>
 <div>
   <label for  = "tournament-description">Tournament description: </label>
-  <input type = "text" [(disabled)] = "newTournament.tournament-description" placeholder = "what is this about?">
+  <input type = "text" [(ngModel)] = "newTournament.tournamentDescription" name = "tournament" placeholder = "what is this about?">
 </div>
 <br>
 <br>
 <div>
   <label for  = "tournament-type">Tournament type: </label>
-  <input type = "text" [(disabled)] = "newTournament.tournament-type" placeholder = "type of tourney?">
+  <input type = "text" [(ngModel)] = "newTournament.tournamentType" name = "tournament" placeholder = "type of tourney?">
 </div>
 <br>
 <br>
 <div>
   <label for  = "tournament-rules">Tournament rules: </label>
-  <input type = "text" [(disabled)] = "newTournament.tournament-rules" placeholder = "wut u rules m8?">
+  <input type = "text" [(ngModel)] = "newTournament.rules" name = "tournament" placeholder = "wut u rules m8?">
 </div>
 <div>
   <label for  = "team-quantity">Number of teams: </label>
-  <input type = "text" [(disabled)] = "newTournament.team-quantity" placeholder = "u wot m8?">
+  <input type = "text" [(ngModel)] = "newTournament.numberOfTeams" name = "tournament" placeholder = "u wot m8?">
 </div>
 <hr>
-<button (click)="tryToCreateTournament(theTournament)">Submit New Tournament</button>
+<button (click)="tryToCreateTournament()">Submit New Tournament</button>
 
 <!-- LIST OF TEAMS -->
 <!--  <div *ngFor = "let team of teams">
