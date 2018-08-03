@@ -5,7 +5,15 @@ import { TournamentBracketComponent } from './tournament-bracket/tournament-brac
 import { TournamentComponent } from './tournament/tournament.component';
 import { TournamentCreateComponent } from './tournament/tournament-create/tournament-create.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { TournamentService } from './services/tournament.service';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes} from '@angular/router';
 
+// sample inside route array   {path: 'api/tasks/delete/:id', component: TodoListComponent}
+const routes: Routes = [
+  { path: 'tournament/create', component: TournamentCreateComponent },
+];
 
 @NgModule({
   declarations: [
@@ -16,9 +24,12 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     NavBarComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
-  providers: [],
+  providers: [TournamentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
