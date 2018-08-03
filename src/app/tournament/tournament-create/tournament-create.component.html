@@ -1,0 +1,40 @@
+
+<!-- refer to create tournament.component.ts -->
+<!-- <input type = "text" [(disabled)] = "newTask.title"> -->
+<hr>
+<div>
+  <label for  = "tournament-title">Tournament Title</label>
+  <input type = "text">
+</div>
+<br>
+<br>
+<br>
+<div>
+  <label for  = "tournament-description">Tournament Description</label>
+  <input type = "text">
+</div>
+<br>
+<br>
+<br>
+<div>
+  <label for  = "tournament-type">Tournament Type</label>
+  <input type = "text">
+</div>
+<br>
+<br>
+<br>
+<div>
+  <label for  = "tournament-rules">Tournament Rules</label>
+  <input type = "text">
+</div>
+<hr>
+<button (click)="createTournament()">Submit New Tournament</button>
+
+<!-- LIST OF TEAMS -->
+<!--  <div *ngFor = "let team of teams">
+      <p>name:        <br>{{team.title}}      </p>
+      <p>description: <br>{{team.description}}</p>
+      <p>logo:        <br>{{team._id}}        </p>
+      <button (click) = "deleteTeam(team._id)">Delete</button>
+      <button (click) = "editTeam(team._id)">Edit</button>
+</div> -->
