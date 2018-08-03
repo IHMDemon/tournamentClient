@@ -21,8 +21,5 @@ export class TournamentService {
   }
 
   deleteTeam(){
-
   }
-
-
 }

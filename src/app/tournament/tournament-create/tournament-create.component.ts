@@ -8,8 +8,8 @@ import { TournamentService } from '../../services/tournament.service';
 })
 export class TournamentCreateComponent implements OnInit {
 
-  teams:     Array<any>;
   newTournament:  any = {};
+  teams:     Array<any>;
   teamToDelete:   any = {};
 
   constructor(private tournamentService: TournamentService) { }
@@ -18,10 +18,10 @@ export class TournamentCreateComponent implements OnInit {
     console.log("create tournament reached");
     console.log(this.newTournament);
     this.tournamentService.createTournament(this.newTournament)
-    .subscribe((res)=>{
-      this.newTournament = {};
-      
-    })
+    .subscribe(
+      (res)=>{this.newTournament = res},
+      (err)=>{err}
+    )
   }
 
   getTeamList(){
