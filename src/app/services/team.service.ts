@@ -9,21 +9,25 @@ export class TeamService {
   constructor(private myHttp: Http) { }
 
 
-  getEntries(){
+  getteams(){
     return this.myHttp.get('http://localhost:3000/api/team')
     .map((res)=> res.json())
   }
 
 
-  addNewEntry(theWholeEntryObject){
-    return this.myHttp.post('http://localhost:3000/api/team',theWholeEntryObject)
+  createTeam(theWholeEntryObject){
+    return this.myHttp.post('http://localhost:3000/api/team',theWholeEntryObject,{withCredentials: true})
     .map((res)=>res.json());
   }
 
-  getOneEntry(theIdOfTheEntry){
-    return this.myHttp.get('http://localhost:3000/api/team/'+theIdOfTheEntry)
+  getOneteam(theIdOfTheEntry){
+    return this.myHttp.get('http://localhost:3000/api/team/'+theIdOfTheEntry,{withCredentials: true})
     .map((res)=> res.json())
 
   }
+
+  //update 
+
+  // delete 
 
 }
