@@ -15,12 +15,14 @@ export class TournamentCreateComponent implements OnInit {
   constructor(private tournamentService: TournamentService) { }
 
   tryToCreateTournament(){
-    console.log('hello: ', this.newTournament)
     console.log("create tournament reached");
     console.log(this.newTournament);
     this.tournamentService.createTournament(this.newTournament)
     .subscribe(
-      (res)=>{this.newTournament = res},
+      (res)=>{
+        this.newTournament = res;
+        
+      },
       (err)=>{err}
     )
   }
