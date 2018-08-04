@@ -20,6 +20,7 @@ export class TournamentService {
       .map(res => res.json())
   }
 
+  updateTournament
   deleteTeam(){
   }
 }

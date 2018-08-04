@@ -4,15 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from './app.component';
-import { TournamentBracketComponent } from './tournament-bracket/tournament-bracket.component';
 import { TournamentComponent } from './tournament/tournament.component';
 import { TournamentCreateComponent } from './tournament/tournament-create/tournament-create.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { TeamCreationComponent } from './team-creation/team-creation.component';
 import { TournamentService } from './services/tournament.service';
-
+import { TournamentBracketComponent } from './tournament/tournament-bracket/tournament-bracket.component';
+import { TeamCreationComponent } from './teams/team-creation/team-creation.component';
+import { UserCreationComponent } from './users/user-creation/user-creation.component';
 const routes: Routes = [
-  { path: 'team/:id',  component: TeamCreationComponent },
+  { path: 'team/:id',  component: TeamCreationComponent},
   { path: 'tournament/create', component: TournamentCreateComponent },
   ];
 
@@ -21,11 +21,12 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    TournamentBracketComponent,
     NavBarComponent,
-    TeamCreationComponent,
     TournamentComponent,
     TournamentCreateComponent,
+    TournamentBracketComponent,
+    TeamCreationComponent,
+    UserCreationComponent,
   ],
   imports: [
     BrowserModule,
