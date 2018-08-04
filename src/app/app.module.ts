@@ -13,7 +13,7 @@ import { TeamCreationComponent } from './teams/team-creation/team-creation.compo
 import { UserCreationComponent } from './users/user-creation/user-creation.component';
 const routes: Routes = [
   { path: 'team/:id',  component: TeamCreationComponent},
-  { path: 'tournament/create', component: TournamentCreateComponent },
+  { path: 'tournament', component: TournamentCreateComponent },
   ];
 
 // sample inside route array   {path: 'api/tasks/delete/:id', component: TodoListComponent}
@@ -32,7 +32,9 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule,
+    RouterModule.forRoot(
+      routes, 
+      {enableTracing: true}),
   ],
   providers: [TournamentService],
 
