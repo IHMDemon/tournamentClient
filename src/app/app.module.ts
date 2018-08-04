@@ -31,6 +31,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    RouterModule,
   ],
   providers: [TournamentService],
 
