@@ -1,3 +1,21 @@
-<p>
-  team-creation works!
-</p>
+<hr>
+<div>
+  <label for  = "team-title">Team name: </label>
+  <input type = "text" [(ngModel)] = "newTeam.teamName" name = "team" placeholder = "some team name">
+</div>
+<br>
+<br>
+<div>
+  <label for  = "team-description">Team description: </label>
+  <input type = "text" [(ngModel)] = "newTeam.description" name = "team" placeholder = "Tell us about your team.">
+</div>
+<br>
+<br>
+<div>
+  <label for  = "team-type">Team roster: </label>
+  <h2>show roster</h2>
+</div>
+<br>
+<br>
+
+<button (click)="addNewTeam()">Submit New Team</button>

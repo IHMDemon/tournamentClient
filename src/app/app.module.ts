@@ -11,6 +11,7 @@ import { TournamentService } from './services/tournament.service';
 import { TournamentBracketComponent } from './tournament/tournament-bracket/tournament-bracket.component';
 import { TeamCreationComponent } from './teams/team-creation/team-creation.component';
 import { UserCreationComponent } from './users/user-creation/user-creation.component';
+import { TeamService } from './services/team.service';
 const routes: Routes = [
   { path: 'team/:id',  component: TeamCreationComponent},
   { path: 'tournament/create', component: TournamentCreateComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
     TournamentBracketComponent,
     TeamCreationComponent,
     UserCreationComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,10 @@ const routes: Routes = [
     HttpModule,
     RouterModule,
   ],
-  providers: [TournamentService],
+  providers: [
+  TournamentService,
+  TeamService
+  ],
 
   bootstrap: [AppComponent]
 })
