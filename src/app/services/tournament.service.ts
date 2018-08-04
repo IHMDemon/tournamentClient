@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { RouterModule, Routes } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 @Injectable({
