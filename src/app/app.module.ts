@@ -23,6 +23,11 @@ import { TournamentBracketComponent } from './tournament/tournament-bracket/tour
 import { TeamCreationComponent } from './teams/team-creation/team-creation.component';
 import { UserCreationComponent } from './users/user-creation/user-creation.component'
   import { MainMenuComponent } from './main/main-menu/main-menu.component';
+import { SignupFormComponent } from './users/signup-form/signup-form.component';
+import { LoginFormComponent } from './users/login-form/login-form.component';
+import { UserProfileComponent } from './users/user-profile/user-profile.component';
+import { TeamProfileComponent } from './teams/team-profile/team-profile.component';
+import { TeamEditformComponent } from './teams/team-editform/team-editform.component';
 
 const routes: Routes = [
   
@@ -62,6 +67,11 @@ const routes: Routes = [
     UserCreationComponent,
     NavBarComponent,
     MainMenuComponent,
+    SignupFormComponent,
+    LoginFormComponent,
+    UserProfileComponent,
+    TeamProfileComponent,
+    TeamEditformComponent,
   ],
   imports: [
     BrowserModule,
