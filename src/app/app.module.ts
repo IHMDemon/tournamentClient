@@ -5,14 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from "@angular/router";
 
 
-
 import { TournamentService } from './services/tournament.service';
 import { UserService } from './services/user.service';
-
-
-
-
-
 
 
 import { AppComponent } from './app.component';
@@ -34,6 +28,18 @@ const routes: Routes = [
   { path: 'signup', 
   component: UserCreationComponent
   },
+
+  { path: 'login',
+    component: LoginFormComponent
+  },
+
+  { path: 'home',
+  // redirectTo: '/',will test you later.
+  // pathMatch: 'full'
+    component: MainMenuComponent
+  },
+
+
   
   { path: 'team/:id',  
     component: TeamCreationComponent 
@@ -52,6 +58,11 @@ const routes: Routes = [
     redirectTo: '/',
     pathMatch: 'full' 
   }
+
+
+
+
+
   ];
 
 // sample inside route array   {path: 'api/tasks/delete/:id', component: TodoListComponent}

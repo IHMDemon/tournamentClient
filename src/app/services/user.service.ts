@@ -23,6 +23,15 @@ export class UserService {
       .catch(this.handleError);
 
   }
+  loginUser(theUserToLogIn) {
+    return this.myhttp.post(`http://localhost:3000/api/login`, theUserToLogIn, {withCredentials: true})
+      .map(res => res.json())
+      .catch(this.handleError);
+
+  }
+
+
+
 
   // updateTournament
   // deleteTeam(){

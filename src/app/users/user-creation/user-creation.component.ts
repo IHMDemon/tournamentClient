@@ -41,9 +41,6 @@ export class UserCreationComponent implements OnInit {
 
   createUser(){
     this.userServ.createUser(this.theNewUser)
-    // .subscribe((afterTheUserIsCreated)=>{
-    //   this.router.navigate(['/'])
-    // })
     .subscribe(
       (successResponse)=>{
         console.log('UserCreationSuccessful');
