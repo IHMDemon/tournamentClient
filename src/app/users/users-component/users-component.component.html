@@ -1,0 +1,25 @@
+<form (submit) = "createUser()">
+  <h2>Create a New User</h2>
+
+  <label>Username</label>
+  <br><input [(ngModel)]="theNewUser.username" name="username" type="text" #nameInput="ngModel" required>
+  <br>
+  <div *ngIf="nameInput.errors && nameInput.touched">
+    <p *ngIf="nameInput.errors.required">
+      Username is required
+    </p>
+  </div>
+  <br>
+
+  <label>Password</label>
+  <br><input [(ngModel)]="theNewUser.password" name="password" type="password" #passwordInput="ngModel" minlength="8">
+  <br>
+  <div *ngIf="passwordInput.errors && passwordInput.touched">
+    <p *ngIf="passwordInput.errors.minlength">
+      Password must be longer
+    </p>
+  </div>
+  <br>
+
+  <button>Create My Account</button>
+</form>
