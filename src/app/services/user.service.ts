@@ -12,7 +12,8 @@ export class UserService {
   constructor(public myhttp: Http) { }
 
   handleError(e) {
-    console.log(e);
+    const err = e._body;
+    console.log(JSON.parse((<any>e)._body))
      return Observable.throw(e.json().message);
   }
 
@@ -20,6 +21,7 @@ export class UserService {
     return this.myhttp.post(`http://localhost:3000/api/signup`, theNewUser, {withCredentials: true})
       .map(res => res.json())
       .catch(this.handleError);
+
   }
 
   // updateTournament

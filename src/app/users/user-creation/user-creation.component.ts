@@ -45,8 +45,8 @@ export class UserCreationComponent implements OnInit {
       (successResponse)=>{
         console.log('UserCreationSuccessful');
         this.successCallback(successResponse);},
-      (err)=>{err}
-    )
+      (errorResponse)=>{this.errorCallback(errorResponse)}
+    );
   }
 
 
