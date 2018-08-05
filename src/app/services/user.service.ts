@@ -14,8 +14,6 @@ export class UserService {
   constructor(public myhttp: Http) { }
 
   handleError(e) {
-    console.log(e);
-  //  return JSON.parse((<any>e)._body)
      return Observable.throw(e.json().message);
   }
 
