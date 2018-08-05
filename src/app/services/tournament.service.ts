@@ -17,13 +17,21 @@ export class TournamentService {
   }
 
   createTournament(theTournament) {
-    console.log("testing for push purposes")
-    console.log(theTournament)
+    console.log("tournament created: =============>",theTournament)
     return this.myhttp.post(`http://localhost:3000/api/tournament/create`, theTournament, {withCredentials: true})
       .map(res => res.json())
   }
 
+  updateTeam(theIdOfTheEntry){
+    console.log("a team gets edited: ===========>", theIdOfTheEntry)
+    return this.myhttp.post(`http://localhost:3000/api/team/` + theIdOfTheEntry,{withCredentials: true})
+    .map((res)=> res.json())
+  }
+
+  
+
   // updateTournament
+  // ---- change name, remove a specific team 
   // deleteTeam(){
   // }
 }
