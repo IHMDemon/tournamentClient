@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
+
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -12,8 +14,8 @@ export class UserService {
   constructor(public myhttp: Http) { }
 
   handleError(e) {
-    const err = e._body;
-    console.log(JSON.parse((<any>e)._body))
+    console.log(e);
+  //  return JSON.parse((<any>e)._body)
      return Observable.throw(e.json().message);
   }
 
