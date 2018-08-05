@@ -15,8 +15,6 @@ export class TournamentCreateComponent implements OnInit {
   constructor(public tournamentService: TournamentService) { }
 
   tryToCreateTournament(){
-    console.log("create tournament reached");
-    console.log(this.newTournament);
     this.tournamentService.createTournament(this.newTournament)
     .subscribe(
       (res)=>{
