@@ -22,10 +22,31 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TournamentBracketComponent } from './tournament/tournament-bracket/tournament-bracket.component';
 import { TeamCreationComponent } from './teams/team-creation/team-creation.component';
 import { UserCreationComponent } from './users/user-creation/user-creation.component'
+  import { MainMenuComponent } from './main/main-menu/main-menu.component';
+
 const routes: Routes = [
-  { path: 'team/:id',  component: TeamCreationComponent},
-  { path: 'tournament/create', component: TournamentCreateComponent },
-  { path: 'signup', component: UserCreationComponent}
+  
+  { path: 'signup', 
+  component: UserCreationComponent
+  },
+  
+  { path: 'team/:id',  
+    component: TeamCreationComponent 
+  },
+  { path: 'tournament', 
+    component: TournamentComponent 
+  },
+  { path: 'tournament/create', 
+    component: TournamentCreateComponent 
+  },
+  { path: '', 
+    redirectTo: '/',
+    pathMatch: 'full'
+  },
+  { path: '**', 
+    redirectTo: '/',
+    pathMatch: 'full' 
+  }
   ];
 
 // sample inside route array   {path: 'api/tasks/delete/:id', component: TodoListComponent}
@@ -40,13 +61,16 @@ const routes: Routes = [
     TeamCreationComponent,
     UserCreationComponent,
     NavBarComponent,
+    MainMenuComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule,
-    RouterModule.forRoot(routes)
+
+    RouterModule.forRoot(
+      routes, 
+      {enableTracing: true}),
   ],
   providers: [TournamentService, UserService],
 

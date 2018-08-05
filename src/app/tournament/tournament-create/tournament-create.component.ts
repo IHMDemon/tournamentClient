@@ -12,7 +12,7 @@ export class TournamentCreateComponent implements OnInit {
   teams:     Array<any>;
   teamToDelete:   any = {};
 
-  constructor(private tournamentService: TournamentService) { }
+  constructor(public tournamentService: TournamentService) { }
 
   tryToCreateTournament(){
     this.tournamentService.createTournament(this.newTournament)
