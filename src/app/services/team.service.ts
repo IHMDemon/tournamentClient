@@ -27,6 +27,11 @@ export class TeamService {
     .map(res=>res.json());
   }
 
+  updateTeam(theIdOfTheEntry){
+    console.log("a team gets edited: ===========>", theIdOfTheEntry)
+    return this.myHttp.post(`http://localhost:3000/api/team/` + theIdOfTheEntry,{withCredentials: true})
+    .map((res)=> res.json())
+  }
   // getOneteam(theIdOfTheEntry){
   //   return this.myHttp.get('http://localhost:3000/api/team/'+theIdOfTheEntry,{withCredentials: true})
   //   .map((res)=> res.json())
