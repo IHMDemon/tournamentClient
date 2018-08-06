@@ -17,7 +17,7 @@ export class TeamCreationComponent implements OnInit {
   addNewTeam(){
     console.log("creating new team");
     console.log(this.newTeam,);
-    this.newTeam.createTeam(this.newTeam)
+    this.TeamService.createTeam(this.newTeam)
     .subscribe(
       (res)=>{
         this.newTeam = res;
