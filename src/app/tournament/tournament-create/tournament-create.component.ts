@@ -17,8 +17,8 @@ export class TournamentCreateComponent implements OnInit {
   constructor(public tournamentService: TournamentService, public userService: UserService, public teamService: TeamService) { }
   
   theLoggedInUser: any = {}
-  theError: any;
-  team:           any = {};
+  theError:        any;
+  team:            any = {};
 
 
   successCallback(userObject){
@@ -47,6 +47,7 @@ export class TournamentCreateComponent implements OnInit {
   // }
 
   tryToCreateTournament(){
+    console.log("===================================",this.theLoggedInUser._id);
     this.newTournament.tournamentAdmin = this.theLoggedInUser._id
     this.tournamentService.createTournament(this.newTournament)
     .subscribe(
