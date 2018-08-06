@@ -14,38 +14,24 @@ constructor (public userServ: UserService) {}
 theLoggedInUser:any = {};
 theError = '';
 
-successCallback(userObject){
-  this.theError = '';
-  this.theLoggedInUser = userObject;
-}
 
 
-errorCallback(errorObject){
-  this.theError = errorObject;
-  this.theLoggedInUser = {username:'', password:''};
-}
-
-
-
-
-checkIfTheUserIsLoggedIn(){
-  this.userServ.checkIfLoggedIn()
-  .subscribe(
-    res =>{this.successCallback(res);
-    console.log(res)
-  },
-    err =>{this.errorCallback(null)}
-  )
-}
-
-
-
-
-
-
-
-
+//PUT THIS IN ANOTHER COMPONENT: THIS IS SANDRA'S ADVICE.
+//not so much for app, but for other components when the router.
+//You need to import router through the component.
+//SANDRA CODE
   ngOnInit(){
-    this.checkIfTheUserIsLoggedIn();
+    this.userServ.checkIfLoggedIn()
+    .toPromise()
+    .then(user=>{
+      this.theLoggedInUser = user
+    })
+    .catch(err=>{
+      this.theError=err.json();
+      // this.router.navigate(['/login']);
+    })
   }
 }
+//behavioral subject: I will cool.
+// Every component.
+
