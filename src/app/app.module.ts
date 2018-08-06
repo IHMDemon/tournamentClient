@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from "@angular/router";
@@ -22,16 +22,25 @@ import { TeamEditformComponent } from './teams/team-editform/team-editform.compo
 
 import { TeamListComponent } from './teams/team-list/team-list.component';
 import { TeamsComponent } from './teams/teams.component';
+import { JoinTeamComponent } from './teams/join-team/join-team.component';
 
 
 const routes: Routes = [
+  {
+    path: 'allteams',
+    component: TeamListComponent
+  },
+  {
+    path:'team/:id',
+    component: TeamProfileComponent
+  },
   {
     path: 'team/creation',
     component: TeamCreationComponent
   },
   
   { path: 'signup', 
-  component: UserCreationComponent
+    component: UserCreationComponent
   },
   { path: 'login',
     component: LoginFormComponent
@@ -80,6 +89,7 @@ const routes: Routes = [
     TeamEditformComponent,
     TeamListComponent,
     TeamsComponent,
+    JoinTeamComponent,
 
   ],
   imports: [
@@ -88,7 +98,9 @@ const routes: Routes = [
     HttpModule,
 
     RouterModule.forRoot(
-      routes),
+      routes,
+    {enableTracing: true}
+  )
   ],
   providers: [TournamentService, UserService, TeamService],
 

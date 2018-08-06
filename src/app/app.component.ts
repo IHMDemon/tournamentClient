@@ -21,15 +21,15 @@ theError = '';
 //You need to import router through the component.
 //SANDRA CODE
   ngOnInit(){
-    this.userServ.checkIfLoggedIn()
-    .toPromise()
-    .then(user=>{
-      this.theLoggedInUser = user
-    })
-    .catch(err=>{
-      this.theError=err.json();
+    // this.userServ.checkIfLoggedIn()
+    // .toPromise()
+    // .then(user=>{
+    //   this.theLoggedInUser = user
+    // })
+    // .catch(err=>{
+    //   this.theError=err.json();
       // this.router.navigate(['/login']);
-    })
+    // })
   }
 }
 //behavioral subject: I will cool.
