@@ -3,6 +3,7 @@ import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,7 @@ export class TeamService {
 
 
   getteams(){
-    return this.myHttp.get('http://localhost:3000/api/tournament/teamlist')
+    return this.myHttp.get('http://localhost:3000/api/team/allteams')
     .map((res)=> res.json())
   }
 
@@ -27,8 +28,13 @@ export class TeamService {
     .map(res=>res.json());
   }
 
+  getJustOneTeam(theIdOfTheTeam){
+    return this.myHttp.get(`http://localhost:3000/api/team/${theIdOfTheTeam}`)
+    .map((res)=> res.json());
+  }
+  
   // getOneteam(theIdOfTheEntry){
-  //   return this.myHttp.get('http://localhost:3000/api/team/'+theIdOfTheEntry,{withCredentials: true})
+  //   return this.myHttp.get('http://localhost:3000/api/team/details/:id'{withCredentials: true})
   //   .map((res)=> res.json())
 
   // }
@@ -40,4 +46,7 @@ export class TeamService {
   // }
   // delete 
 
+
+
+  
 }
