@@ -29,6 +29,10 @@ export class TournamentService {
     .map((res)=> res.json())
   }
 
+  addTeam(theIdOfTheEntry){
+    console.log("testing out if the team is really getting pushed", theIdOfTheEntry);
+    return this.myhttp.post(`http://localhost:3000/api/team/`, theIdOfTheEntry,{withCredentials: true})
+  }
   
 
   // updateTournament

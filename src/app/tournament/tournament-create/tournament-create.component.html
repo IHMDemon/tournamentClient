@@ -1,29 +1,21 @@
-
 <!-- refer to create tournament.component.ts -->
 <!-- <input type = "text" [(disabled)] = "newTask.title"> -->
 <form (submit) = "tryToCreateTournament()">
-  <label for  = "tournament-title">Tournament Title: </label>
+  <label >Tournament Title: </label>
   <input type = "text" [(ngModel)] = "newTournament.tournamentName" name = "tournament" placeholder = "some tournament name">
   <br><br>
-  <label for  = "tournament-description">Tournament description: </label>
+  <label>Tournament description: </label>
   <input type = "text" [(ngModel)] = "newTournament.tournamentDescription" name = "tournament" placeholder = "what is this about?"> 
   <br><br>
-  <label for  = "tournament-type">Tournament type: </label>
+  <label>Tournament type: </label>
   <input type = "text" [(ngModel)] = "newTournament.tournamentType" name = "tournament" placeholder = "type of tourney?">
   <br><br>
-  <label for  = "tournament-rules">Tournament rules: </label>
+  <label>Tournament rules: </label>
   <input type = "text" [(ngModel)] = "newTournament.rules" name = "tournament" placeholder = "wut u rules m8?">
   <br><br>
-  <label for  = "team-quantity">Number of teams: </label>
+  <label>Number of teams: </label>
   <input type = "text" [(ngModel)] = "newTournament.numberOfTeams" name = "tournament" placeholder = "u wot m8?">
   <br><br>
   <button>Submit New Tournament</button>
 </form>
-<!-- LIST OF TEAMS -->
-<!--  <div *ngFor = "let team of teams">
-      <p>name:        <br>{{team.title}}      </p>
-      <p>description: <br>{{team.description}}</p>
-      <p>logo:        <br>{{team._id}}        </p>
-      <button (click) = "deleteTeam(team._id)">Delete</button>
-      <button (click) = "editTeam(team._id)">Edit</button>
-</div> -->
+
