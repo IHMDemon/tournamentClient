@@ -24,7 +24,14 @@ const routes: Routes = [
   { path: 'signup', 
   component: UserCreationComponent
   },
-  
+  { path: 'login',
+    component: LoginFormComponent
+  },
+  { path: 'home',
+  // redirectTo: '/',will test you later.
+  // pathMatch: 'full'
+    component: MainMenuComponent
+  },
   { path: 'team/:id',  
     component: TeamCreationComponent 
   },
@@ -69,8 +76,7 @@ const routes: Routes = [
     HttpModule,
 
     RouterModule.forRoot(
-      routes, 
-      {enableTracing: true}),
+      routes),
   ],
   providers: [TournamentService, UserService],
 
