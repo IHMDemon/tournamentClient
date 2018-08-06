@@ -25,6 +25,10 @@ import { TeamsComponent } from './teams/teams.component';
 
 
 const routes: Routes = [
+  {
+    path: 'team/creation',
+    component: TeamCreationComponent
+  },
   
   { path: 'signup', 
   component: UserCreationComponent
