@@ -1,4 +1,23 @@
-<h3>INSERT LOGIN UP FORM</h3>
+<h2>Login Form</h2>
+
+<form (submit)="logTheUserIn()">
+  
+  <label>Username</label>
+  <input [(ngModel)]="theLoggedInUser.username" name="blahuser" type="text">
+  
+  <label>Password</label>
+  <input [(ngModel)]="theLoggedInUser.password" name="blahpass" type="text">
+  <button>Signup</button>
+</form>
+<div class ="aProblem" *ngIf="theError">{{theError}}</div>
+  
+
+
+
+
+
+
+
 <!-- STANDARD LOGIN FORM -->
 <!-- MADE IT THIS WAY SO WE CAN POP THIS UP ANYWHERE -->
 <!-- INCASE THE USER GETS KICKED OUT FROM  -->
