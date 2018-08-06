@@ -1,36 +1,25 @@
 
 <!-- refer to create tournament.component.ts -->
 <!-- <input type = "text" [(disabled)] = "newTask.title"> -->
-<hr>
-<div>
+
+<form (submit) = "tryToCreateTournament()">
   <label for  = "tournament-title">Tournament Title: </label>
   <input type = "text" [(ngModel)] = "newTournament.tournamentName" name = "tournament" placeholder = "some tournament name">
-</div>
-<br>
-<br>
-<div>
+<br><br>
   <label for  = "tournament-description">Tournament description: </label>
   <input type = "text" [(ngModel)] = "newTournament.tournamentDescription" name = "tournament" placeholder = "what is this about?">
-</div>
-<br>
-<br>
-<div>
+<br><br>
   <label for  = "tournament-type">Tournament type: </label>
   <input type = "text" [(ngModel)] = "newTournament.tournamentType" name = "tournament" placeholder = "type of tourney?">
-</div>
-<br>
-<br>
-<div>
+<br><br>
   <label for  = "tournament-rules">Tournament rules: </label>
   <input type = "text" [(ngModel)] = "newTournament.rules" name = "tournament" placeholder = "wut u rules m8?">
-</div>
-<div>
+  <br><br>
   <label for  = "team-quantity">Number of teams: </label>
   <input type = "text" [(ngModel)] = "newTournament.numberOfTeams" name = "tournament" placeholder = "u wot m8?">
-</div>
-<hr>
-<button (click)="tryToCreateTournament()">Submit New Tournament</button>
-
+<br><br>
+  <button>Submit New Tournament</button>
+</form>
 <!-- LIST OF TEAMS -->
 <!--  <div *ngFor = "let team of teams">
       <p>name:        <br>{{team.title}}      </p>
