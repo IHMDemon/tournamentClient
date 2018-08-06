@@ -1,0 +1,15 @@
+<button *ngIf="theLoggedInUser" (click)="logMeOut()">Log Out</button>
+
+
+
+
+<h2>Welcome, {{theLoggedInUser.username|json}}</h2>
+<h3>create tournament -- tournament/create</h3> 
+<h3>create team -- team/create</h3>  
+<h3>join team -- team/addUser</h3>
+<h3>spectate -- tournament</h3>
+
+<!-- THESE ARE JUST LINKS WITH EXTRA BACKEND UPDATE FEATURES -->
+<!-- EVAN CAN START DESIGNING THIS -->
+
+<button (click)="app-component.checkIfTheUserIsLoggedIn()">check if logged in </button>

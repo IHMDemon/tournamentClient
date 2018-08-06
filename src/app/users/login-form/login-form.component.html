@@ -1,0 +1,42 @@
+<h2>Login Form</h2>
+
+<form (submit)="logTheUserIn()">
+  
+  <label>Username</label>
+  <input [(ngModel)]="theLoggedInUser.username" name="blahuser" type="text">
+  
+  <label>Password</label>
+  <input [(ngModel)]="theLoggedInUser.password" name="blahpass" type="text">
+  <button>Signup</button>
+</form>
+<div class ="aProblem" *ngIf="theError">{{theError}}</div>
+  
+
+
+
+
+
+
+
+<!-- STANDARD LOGIN FORM -->
+<!-- MADE IT THIS WAY SO WE CAN POP THIS UP ANYWHERE -->
+<!-- INCASE THE USER GETS KICKED OUT FROM  -->
+<!-- HAVING SHITTY INTERNET -->
+
+<!-- EDIT  TO LOGIN FORM -->
+
+<h2>Signup Form</h2>
+
+<form (submit)="createUser()">
+  
+  <label>Username</label>
+  <input [(ngModel)]="theNewUser.username" name="blah" type="text">
+  
+  <label>Password</label>
+  <input [(ngModel)]="theNewUser.password" name="blah" type="text">
+  <button>Signup</button>
+</form>
+<div class ="aProblem" *ngIf="theError">{{theError}}</div>
+  
+
+<!-- THE CURRENT FORM RESIDING IN IT WILL BE TRANSFERRED TO SIGN-UP FORM COMPONENT  -->

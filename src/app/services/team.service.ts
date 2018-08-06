@@ -16,10 +16,10 @@ export class TeamService {
   }
 
 
-  // getteams(){
-  //   return this.myHttp.get('http://localhost:3000/api/team')
-  //   .map((res)=> res.json())
-  // }
+  getteams(){
+    return this.myHttp.get('http://localhost:3000/api/tournament/teamlist')
+    .map((res)=> res.json())
+  }
 
 
   createTeam(theWholeEntryObject){
