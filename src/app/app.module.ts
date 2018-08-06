@@ -25,7 +25,7 @@ import { JoinTeamComponent } from './teams/join-team/join-team.component';
 
 const routes: Routes = [
   {
-    path: 'team/allteams',
+    path: 'allteams',
     component: TeamListComponent
   },
   {
