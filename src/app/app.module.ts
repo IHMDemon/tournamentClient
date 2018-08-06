@@ -90,8 +90,7 @@ const routes: Routes = [
     HttpModule,
 
     RouterModule.forRoot(
-      routes, 
-      {enableTracing: true}),
+      routes),
   ],
   providers: [TournamentService, UserService],
 

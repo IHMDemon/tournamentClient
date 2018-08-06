@@ -18,7 +18,6 @@ export class LoginFormComponent implements OnInit {
   successCallback(userObject){
     this.theError = '';
     this.theLoggedInUser = userObject;
-    console.log(this.theLoggedInUser);
   }
 
   errorCallback(errorObject){
@@ -45,7 +44,21 @@ export class LoginFormComponent implements OnInit {
   }
 
 
+  checkIfLoggedIn(){
+    this.userServ.checkIfLoggedIn()
+      .subscribe(
+        res =>{
+          console.log(res);
+          this.successCallback(res)
+          this.router.navigate(['/home']);
+
+        },
+        err =>{this.errorCallback(null)}
+      )
+  }
+
   ngOnInit() {
+    this.checkIfLoggedIn();
   }
 
 }

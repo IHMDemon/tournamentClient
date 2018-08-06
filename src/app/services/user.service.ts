@@ -30,7 +30,14 @@ export class UserService {
 
   }
 
+  checkIfLoggedIn() {
+    return this.myhttp.get('http://localhost:3000/api/loggedin', {withCredentials: true})
+    .map((res)=> {
+      return JSON.parse((<any>res)._body);
+    })
 
+    .catch(this.handleError);
+  }
 
 
   // updateTournament
