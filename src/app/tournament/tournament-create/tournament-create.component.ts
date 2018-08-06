@@ -33,18 +33,18 @@ export class TournamentCreateComponent implements OnInit {
   }
 
 
-  // checkIfLoggedIn(){
-  //   this.userService.checkIfLoggedIn()
-  //     .subscribe(
-  //       res =>{
-  //         console.log("testing");
+  checkIfLoggedIn(){
+    this.userService.checkIfLoggedIn()
+      .subscribe(
+        res =>{
+          console.log("testing");
 
-  //         console.log("what is the user: ", res);
-  //         this.successCallback(res)
-  //       },
-  //       err =>{this.errorCallback(null)}
-  //     )
-  // }
+          console.log("what is the user: ", res);
+          this.successCallback(res)
+        },
+        err =>{this.errorCallback(null)}
+      )
+  }
 
   tryToCreateTournament(){
     console.log("===================================",this.theLoggedInUser._id);
@@ -86,7 +86,7 @@ export class TournamentCreateComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.checkIfLoggedIn();
+    this.checkIfLoggedIn();
   }
   
 }
