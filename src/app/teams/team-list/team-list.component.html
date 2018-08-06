@@ -1,0 +1,8 @@
+<h3>LIST OF TEAMS</h3>
+<div *ngFor = "let team of teams">
+<p>name:        <br>{{team.title}}      </p>
+<p>description: <br>{{team.description}}</p>
+<p>logo:        <br>{{team._id}}        </p>
+<button (click) = "deleteTeam(team._id)">Delete</button>
+<button (click) = "editTeam(team._id)">Edit</button>
+</div>

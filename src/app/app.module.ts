@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from "@angular/router";
 import { TournamentService } from './services/tournament.service';
+import { TeamService } from './services/team.service';
 import { UserService } from './services/user.service';
 import { AppComponent } from './app.component';
 import { TournamentComponent } from './tournament/tournament.component';
@@ -18,7 +19,10 @@ import { LoginFormComponent } from './users/login-form/login-form.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
 import { TeamProfileComponent } from './teams/team-profile/team-profile.component';
 import { TeamEditformComponent } from './teams/team-editform/team-editform.component';
-import { TeamListComponent } from './team-list/team-list.component';
+
+import { TeamListComponent } from './teams/team-list/team-list.component';
+import { TeamsComponent } from './teams/teams.component';
+
 
 const routes: Routes = [
   
@@ -33,7 +37,7 @@ const routes: Routes = [
   // pathMatch: 'full'
     component: MainMenuComponent
   },
-  { path: 'team/:id',  
+  { path: 'tournament/teamlist',  
     component: TeamCreationComponent 
   },
   { path: 'tournament', 
@@ -71,6 +75,8 @@ const routes: Routes = [
     TeamProfileComponent,
     TeamEditformComponent,
     TeamListComponent,
+    TeamsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -80,7 +86,7 @@ const routes: Routes = [
     RouterModule.forRoot(
       routes),
   ],
-  providers: [TournamentService, UserService],
+  providers: [TournamentService, UserService, TeamService],
 
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TournamentService } from '../../services/tournament.service';
 import { UserService } from '../../services/user.service';
+import { TeamService } from '../../services/team.service';
 
 @Component({
   selector: 'app-tournament-create',
@@ -10,13 +11,14 @@ import { UserService } from '../../services/user.service';
 export class TournamentCreateComponent implements OnInit {
 
   newTournament:  any = {};
-  teams:     Array<any>;
+  teams:          Array<any>;
   teamToDelete:   any = {};
-
-  constructor(public tournamentService: TournamentService, public userService: UserService) { }
-
+  
+  constructor(public tournamentService: TournamentService, public userService: UserService, public teamService: TeamService) { }
+  
   theLoggedInUser: any = {}
-  theError: any;
+  theError:        any;
+  team:            any = {};
 
 
   successCallback(userObject){
@@ -31,20 +33,21 @@ export class TournamentCreateComponent implements OnInit {
   }
 
 
-  // checkIfLoggedIn(){
-  //   this.userService.checkIfLoggedIn()
-  //     .subscribe(
-  //       res =>{
-  //         console.log("testing");
+  checkIfLoggedIn(){
+    this.userService.checkIfLoggedIn()
+      .subscribe(
+        res =>{
+          console.log("testing");
 
-  //         console.log("what is the user: ", res);
-  //         this.successCallback(res)
-  //       },
-  //       err =>{this.errorCallback(null)}
-  //     )
-  // }
+          console.log("what is the user: ", res);
+          this.successCallback(res)
+        },
+        err =>{this.errorCallback(null)}
+      )
+  }
 
   tryToCreateTournament(){
+    console.log("===================================",this.theLoggedInUser._id);
     this.newTournament.tournamentAdmin = this.theLoggedInUser._id
     this.tournamentService.createTournament(this.newTournament)
     .subscribe(
@@ -62,9 +65,17 @@ export class TournamentCreateComponent implements OnInit {
     console.log("see team list");
   }
 
-  addTeam(){
-    console.log("add team");
-  }
+  // addTeam(teamer){
+  //   this.tournamentService.addTeam(teamer)
+  //   .subscribe(
+  //     (res)=>{
+  //       this.team = res;
+  //       return this.team;
+  //     },
+  //   (err)=>{err}
+  //   )
+  //   console.log("added team", this.team);
+  // }
 
   tryToDeleteTeam(){
     console.log("delete team");
@@ -75,7 +86,7 @@ export class TournamentCreateComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.checkIfLoggedIn();
+    this.checkIfLoggedIn();
   }
   
 }
