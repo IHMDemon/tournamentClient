@@ -23,6 +23,22 @@ export class UserService {
       .catch(this.handleError);
 
   }
+  loginUser(theUserToLogIn) {
+    return this.myhttp.post(`http://localhost:3000/api/login`, theUserToLogIn, {withCredentials: true})
+      .map(res => res.json())
+      .catch(this.handleError);
+
+  }
+
+  checkIfLoggedIn() {
+    return this.myhttp.get('http://localhost:3000/api/loggedin', {withCredentials: true})
+    .map((res)=> {
+      return JSON.parse((<any>res)._body);
+    })
+
+    .catch(this.handleError);
+  }
+
 
   // updateTournament
   // deleteTeam(){
