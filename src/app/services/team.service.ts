@@ -16,12 +16,10 @@ export class TeamService {
      return Observable.throw(e.json().message);
   }
 
-
   getteams(){
     return this.myHttp.get('http://localhost:3000/api/team/allteams')
     .map((res)=> res.json())
   }
-
 
   createTeam(theWholeEntryObject){
     return this.myHttp.post('http://localhost:3000/api/team/creation', theWholeEntryObject,{withCredentials: true})
@@ -29,7 +27,7 @@ export class TeamService {
   }
 
   getJustOneTeam(theIdOfTheTeam){
-    return this.myHttp.get(`http://localhost:3000/api/team/${theIdOfTheTeam}`)
+    return this.myHttp.get(`http://localhost:3000/api/team/details/${theIdOfTheTeam}`)
     .map((res)=> res.json());
   }
   
@@ -46,7 +44,4 @@ export class TeamService {
   // }
   // delete 
 
-
-
-  
 }

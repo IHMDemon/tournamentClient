@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { UserService } from '../../services/user.service';
+import {ActivatedRoute} from '../../../../node_modules/@angular/router';
+import {Router, Route} from '@angular/router'
 @Component({
   selector: 'app-team-creation',
   templateUrl: './team-creation.component.html',
@@ -9,7 +11,11 @@ import { UserService } from '../../services/user.service';
 export class TeamCreationComponent implements OnInit {
 
 
-  constructor(public TeamService: TeamService, public userService: UserService) { }
+  constructor(public TeamService: TeamService,
+     public userService: UserService,
+     private router: Router,
+     private activatedRoute: ActivatedRoute,
+    ) { }
 
 
 

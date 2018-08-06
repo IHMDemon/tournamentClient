@@ -1,7 +1,7 @@
 <h3>LIST OF TEAMS</h3>
 <div *ngFor = "let team of allTheTeams">
 <p>Team Name:{{team.teamName}} <br> 
-    <!-- <a [routerLink] = "['team/profile/', team._id]">Team details.</a> -->
+    <a [routerLink] = "['team/', team._id]">Team details.</a>
 </p>
 <br>
 <hr>
