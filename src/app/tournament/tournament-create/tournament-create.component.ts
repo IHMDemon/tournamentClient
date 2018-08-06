@@ -35,6 +35,8 @@ export class TournamentCreateComponent implements OnInit {
     this.userService.checkIfLoggedIn()
       .subscribe(
         res =>{
+          console.log("testing");
+
           console.log("what is the user: ", res);
           this.successCallback(res)
         },
