@@ -31,6 +31,7 @@ export class TeamCreationComponent implements OnInit {
       .subscribe(
         (res) => {
           this.newTeam = res;
+          this.router.navigate(['/allteams']);
 
         },
         (err) => { err }
@@ -46,7 +47,7 @@ export class TeamCreationComponent implements OnInit {
   errorCallback(errorObject) {
     this.theError = errorObject;
     // this.router.navigate(['login']);
-    this.theLoggedInUser = { username: '', password: '' };
+    this.theLoggedInUser = {};
   }
 
   //checks if the person is logged in and pulls the information into this component.

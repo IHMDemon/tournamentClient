@@ -11,6 +11,8 @@ import { Router, Route} from '@angular/router'
 })
 export class TeamProfileComponent implements OnInit {
   
+  theError:        any;
+  theLoggedInUser: any = {}
   theActualTeam: any = {}
 
   constructor(public TeamService: TeamService,
@@ -19,7 +21,50 @@ export class TeamProfileComponent implements OnInit {
       private router: Router
     ) { }
 
+
+    successCallback(userObject){
+      this.theError = '';
+      this.theLoggedInUser = userObject;
+    }
+    
+    errorCallback(errorObject){
+      this.theError = errorObject;
+      // this.router.navigate(['login']);
+      this.theLoggedInUser = {username:'', password:''};
+    }
+    
+    
+    checkIfLoggedIn(){
+      this.userService.checkIfLoggedIn()
+        .subscribe(
+          res =>{
+            console.log("testing");
+    
+            console.log("what is the user: ", res);
+            this.successCallback(res)
+          },
+          err =>{this.errorCallback(null)}
+        )
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   ngOnInit() {
+    this.checkIfLoggedIn();
     this.allTeamsRoute.params //this allows us to grab the id from the browser URL and pull that teams info
     .subscribe((params)=>{
       console.log("1st=-=-=-=--=-=-=-=-=-=-=-=-=-=-1st")
@@ -34,3 +79,5 @@ export class TeamProfileComponent implements OnInit {
   }
 
 }
+
+

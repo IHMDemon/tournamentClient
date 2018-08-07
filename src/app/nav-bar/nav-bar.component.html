@@ -10,25 +10,24 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/signup">signup</a>
+      <li *ngIf="theLoggedInUser === undefined" class="nav-item">
+        <a  class="nav-link" routerLink="/signup">signup</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="theLoggedInUser === undefined" class="nav-item">
         <a class="nav-link" routerLink="/login">login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/team/creation">team</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/allteams">team list</a>
+
+        <a class="nav-link" routerLink="/allteams">teams</a>
+
+
+
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/tournament">tournament</a>
       </li>
-      <li class="nav-item">
-          <a class="nav-link" routerLink="/tournament/creation">tournament create</a>
-        </li>
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
+
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           dropdown
         </a>
@@ -38,13 +37,11 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">something else here</a>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">disabled</a>
-      </li>
+      </li> -->
+
     </ul>
     <span class="navbar-text">
-        Navbar text with an inline element
+        <button *ngIf="theLoggedInUser !==undefined" (click)="logMeOut()">Log Out</button>
       </span>
   </div>
 </nav>

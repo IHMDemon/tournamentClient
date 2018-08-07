@@ -1,10 +1,19 @@
-<div class ="oneTeam">
-  {{theActualTeam.teamName}}
-  <br>
-  {{theActualTeam._id}}
+<h3>Team "{{theActualTeam.teamName}}"</h3>
+<!-- need the better img syntax here -->
+<img src ={{theActualTeam.teamLogo}} width =200px >
+<p>Description: <i>{{theActualTeam.teamDescription}}</i></p>
+<p>Captain: {{theActualTeam.teamCaptain}}</p>
+
+
+
+
+
+<div *ngIf="theLoggedInUser && theActualTeam.teamCaptain === theLoggedInUser._id">
+  Only Team Captains Can See This :)
+<br>
+<button (click) = "deleteTeam(team._id)">Delete</button>
+<br>
+<button (click) = "editTeam(team._id)">Edit</button>
 </div>
 
 
-<!-- INSERT BUNCH OF PLAYER NAMES WITH THEIR IMAGES BESIDE THEM -->
-<!-- NAMES WOULD LINK TO THEIR OWN PROFILE -->
-<!-- VIEWABLE BY SPECTATORS BUT EDIT LINKS WOULD DISAPPEAR -->
