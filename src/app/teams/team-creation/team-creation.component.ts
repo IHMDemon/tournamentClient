@@ -31,6 +31,7 @@ export class TeamCreationComponent implements OnInit {
       .subscribe(
         (res) => {
           this.newTeam = res;
+          this.router.navigate(['/allteams']);
 
         },
         (err) => { err }

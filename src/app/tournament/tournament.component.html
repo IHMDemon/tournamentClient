@@ -1,4 +1,19 @@
 <h3>YOU REACHED THE TOURNAMENT MAIN PAGE</h3>
+  <p>It's tournament time! Check out all the tournaments!</p>
+<hr>
+<div *ngIf="theLoggedInUser !== undefined">
+    <p>Hi {{theLoggedInUser.username}},</p>
+    <a routerLink="/team/creation">Click here to make a team</a>
+    <hr>
+</div>
+
+<div *ngIf="theLoggedInUser === undefined">
+        <p>Want to make a tournament?</p>
+        <a routerLink="/signup">Click here to sign up</a>
+        <br>
+        <a routerLink="/login">Click here to login</a>
+        <hr>
+    </div>
 <hr>
 <!-- THIS SHOULD HOLD ALL THE TOURNAMENTS  -->
 <!-- ONCE WE ARE DONE MAKING ONE TOURNAMENT FUNCTION PROPERLY -->
