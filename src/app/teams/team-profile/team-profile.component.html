@@ -1,19 +1,19 @@
 <h3>Team "{{theActualTeam.teamName}}"</h3>
 <!-- need the better img syntax here -->
 <img src ={{theActualTeam.teamLogo}} width =200px >
-<p>Description: <i>{{theActualTeam.teamDescription}}</i></p>
-<p>Captain: {{theActualTeam.teamCaptain}}</p>
+<p><b>Description:  </b>  <i>{{theActualTeam.teamDescription}}</i></p>
+<p><b>Captain:   </b>  {{theActualTeam.teamCaptain.username}}</p>
 
 
 
 
 
-<div *ngIf="theLoggedInUser && theActualTeam.teamCaptain === theLoggedInUser._id">
+<div *ngIf="theLoggedInUser && theActualTeam.teamCaptain._id === theLoggedInUser._id">
   Only Team Captains Can See This :)
 <br>
-<button (click) = "deleteTeam(team._id)">Delete</button>
+<button (click) = "editTeam()">Edit this Team</button>
 <br>
-<button (click) = "editTeam(team._id)">Edit</button>
+<button (click) = "deleteTeam()">Delete this Team</button>
 </div>
 
 
