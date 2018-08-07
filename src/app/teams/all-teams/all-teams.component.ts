@@ -36,12 +36,11 @@ theLoggedInUser: any = {}
         console.log("team does not exist")
       }
     }
-    
+
     getAllTheTeams(){
       this.TeamService.getteams()
       .subscribe((res)=>{
         this.allTheTeams = res;
-
       })
     }
   ngOnInit() {
