@@ -1,6 +1,5 @@
 
-
-<div *ngIf="theLoggedInUser !== undefined ">
+<div *ngIf="theLoggedInUser !== undefined">
     <header class ="welcome-page">Welcome, {{theLoggedInUser.username|json}}</header>
     <br>
     <br>
@@ -9,24 +8,33 @@
     <!-- means that we want to generate a link to /team/11/user/bob;details=true. -->
     
     <div class = "container">
-    <div>
-        <input type="image" src="https://cdn.pixabay.com/photo/2017/09/03/17/19/beach-2711264_960_720.jpg" name="saveForm" class="btn-images" id="saveForm" routerLink = "/tournament/create">
-        <p class = "link-text">CREATE TOURNAMENT</p> 
-    </div>
-    <div>
-        <input type="image" src="https://cdn.pixabay.com/photo/2017/09/03/17/19/beach-2711264_960_720.jpg" name="saveForm" class="btn-images" id="saveForm" routerLink = "/team/creation/">
-        <p class = "link-text">CREATE TEAM</p>  
-    </div>
-    <div>
-        <input type="image" src="https://cdn.pixabay.com/photo/2017/09/03/17/19/beach-2711264_960_720.jpg" name="saveForm" class="btn-images" id="saveForm" routerLink = "/team/list">
-        <p class = "link-text">JOIN TEAM</p>
-    </div>
-    <div>
-        <input type="image" src="https://cdn.pixabay.com/photo/2017/09/03/17/19/beach-2711264_960_720.jpg" name="saveForm" class="btn-images" id="saveForm" routerLink = "/tournament">
-        <p class = "link-text">JOIN TOURNAMENT</p>
-    </div>
 
-</div>
+                <div>
+                    <input type="image" src="http://akc.org/wp-content/uploads/2016/01/Chihuahua-Outdoors.jpg" name="saveForm" class="btn-images" id="saveForm" routerLink = "/tournament/create">
+                    <p class = "link-text">CREATE TOURNAMENT</p> 
+                </div>
+
+                
+                <div>
+                    <input type="image" src="http://akc.org/wp-content/uploads/2016/01/Chihuahua-Outdoors.jpg" name="saveForm" class="btn-images" id="saveForm" routerLink = "/team/creation/">
+                    <p class = "link-text">CREATE TEAM</p>  
+                </div>
+
+                <div>
+                    <input type="image" src="http://akc.org/wp-content/uploads/2016/01/Chihuahua-Outdoors.jpg" name="saveForm" class="btn-images" id="saveForm" routerLink = "/team/list">
+                    <p class = "link-text">JOIN TEAM</p>
+                </div>
+
+                <div>
+                    <input type="image" src="http://akc.org/wp-content/uploads/2016/01/Chihuahua-Outdoors.jpg" name="saveForm" class="btn-images" id="saveForm" routerLink = "/tournament">
+                    <p class = "link-text">JOIN TOURNAMENT</p>
+                </div>
+
+    </div>  <!-- END container -->
+                
+         
+</div> <!-- End main menu for LOGGED IN USERS -->
+
 
 <div *ngIf="theLoggedInUser === undefined">
      <h2> Hi there, spectator</h2>
@@ -36,8 +44,8 @@
      </p>
     <br>
     <hr>
-</div>
-
+    </div>
+    
 
 
 
