@@ -32,22 +32,16 @@ export class TeamService {
   }
   
 
-//remove team
-  // deleteATeam(theIdOfTheTeam){
-  //   return this.myHttp.post(`http://localhost:3000/api/team/delete/${theIdOfTheTeam}`,{withCredentials:true })
-  //   .map((res)=> res.json());
-  // }
+// remove team call
+  deleteThisTeam(theIdOfTheTeam){
+    return this.myHttp.delete(`http://localhost:3000/api/team/delete/${theIdOfTheTeam}`,{withCredentials:true })
+    .map((res)=> res.json());
+  }
 
 
-  updateTeam(theIdOfTheEntry, componentInfo){
-    console.log("a team gets edited: ===========>", theIdOfTheEntry)
-    return this.myHttp.post(`http://localhost:3000/api/team/${theIdOfTheEntry}`,
-    {
-      updatedTeamName: componentInfo.updatedTeamName,
-      updatedTeamLogo: componentInfo.updatedTeamLogo,
-      updatedDescription: componentInfo.updatedDescription
-      },
-    {withCredentials: true})
+  updateTeam(theIdOfTeamImUpdating, theUpdatedTeam){
+    console.log("a team gets edited: ===========>", theUpdatedTeam)
+    return this.myHttp.post(`http://localhost:3000/api/team/update/${theIdOfTeamImUpdating}`,theUpdatedTeam,{withCredentials: true})
     .map((res)=> res.json())
   }
 
