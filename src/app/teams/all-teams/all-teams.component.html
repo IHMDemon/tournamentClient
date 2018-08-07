@@ -16,15 +16,13 @@
         <hr>
     </div>
 
-
-
 <div *ngFor = "let team of allTheTeams">
 <h6>Team Name:{{team.teamName}}</h6>    <!-- THIS IS THE PROPER WAY TO ROUTERLINK -->
     <a [routerLink] = "['/team', team._id]">Team details.</a>
 
 <br>
 <hr>
-<!-- <p>Roster:        <br>{{team.roster}}      </p>
+<!-- <p>Roster: <br>{{team.roster}}      </p>
 <p>description: <br>{{team.description}}</p>
 <p>logo:        <br>{{team.teamLogo}}        </p> -->
     <button (click) = "addTeam(team)">Add</button>

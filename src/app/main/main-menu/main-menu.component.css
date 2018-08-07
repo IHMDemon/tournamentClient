@@ -1,0 +1,16 @@
+.btn-images {
+  width: 500px;
+  height: 250px;
+
+}
+.container {
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.link-text{
+  position: relative;
+  bottom: 50px;
+  text-align: center;
+}
