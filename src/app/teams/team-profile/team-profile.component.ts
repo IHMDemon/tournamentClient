@@ -48,7 +48,12 @@ export class TeamProfileComponent implements OnInit {
     }
 
 
-
+    deleteThisTeam(){
+      this.TeamService.deleteATeam(this.theActualTeam._id)
+      .subscribe((res)=>{
+        // ROUTER NAVIGATE TO MY TEAMS: set up the my teams in express
+      });
+    }
 
 
 

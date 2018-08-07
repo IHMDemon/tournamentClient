@@ -13,7 +13,18 @@
 <br>
 <button (click) = "editTeam()">Edit this Team</button>
 <br>
-<button (click) = "deleteTeam()">Delete this Team</button>
+
+<div *ngIf="showMe">
+    <h1 style="color:red">WARNING</h1>
+    <h6>Once you delete your team, there is no going back. Are you sure?</h6>
+
+    <button style ="background-color: red; border-radius: 5px; padding: 5px;" (click)="deleteThisTeam()">Destroy this Team</button>
+    </div>
+
+    <br>
+<button (click) ="showMe = !showMe">Delete this Team</button>
 </div>
+
+
 
 
