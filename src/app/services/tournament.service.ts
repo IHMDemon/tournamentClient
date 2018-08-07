@@ -3,13 +3,14 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { RouterModule, Routes } from '@angular/router';
 import 'rxjs/add/operator/map';
+import { AllTeamsComponent } from '../teams/all-teams/all-teams.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TournamentService {
-
-  constructor(private myhttp: Http) { }
+  serviceTeamList:Array<any> = [];
+  constructor(private myhttp: Http, public allTeamsComponent:AllTeamsComponent) { }
 
   handleError(e) {
     console.log(e);
@@ -17,7 +18,6 @@ export class TournamentService {
   }
 
   createTournament(theTournament) {
-
     console.log("tournament created: =============>",theTournament)
     return this.myhttp.post(`http://localhost:3000/api/tournament/create`, theTournament, {withCredentials: true})
       .map(res => res.json())

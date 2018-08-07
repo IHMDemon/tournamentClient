@@ -1,14 +1,16 @@
 <h3>YOU REACHED THE TOURNAMENT MAIN PAGE</h3>
-<hr>
-<!-- THIS SHOULD HOLD ALL THE TOURNAMENTS  -->
-<!-- ONCE WE ARE DONE MAKING ONE TOURNAMENT FUNCTION PROPERLY -->
-
+<div class = "left">
+<app-all-teams></app-all-teams>
+</div>
 <!-- INSERT NGFOR AND NGIF TO SEPARATE THE TEAMS -->
+<div class = "right">
 <app-tournament-bracket></app-tournament-bracket>
-<br>
-<app-tournament-bracket></app-tournament-bracket>
+</div>
 
-
-<hr>
-<h3>========= will transfer this as soon as we get the menu going =========</h3>
-<app-tournament-create></app-tournament-create>
+<!--  <div *ngFor = "let team of allTheTeams">
+      <h6>Team Name:{{team.teamName}}</h6>
+      <a [routerLink] = "['/team', team._id]">Team details</a>
+      <br>
+      <button (click) = "deleteTeam(team._id)">Delete</button>
+      <button (click) = "editTeam(team._id)">Edit</button>
+      </div> -->
