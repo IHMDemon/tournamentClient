@@ -3,7 +3,7 @@ import {UserService} from '../../services/user.service'
 import {ActivatedRoute} from '@angular/router'
 import {Router, Route} from '@angular/router'
 import {FormsModule} from '@angular/forms'
-import {errorObject} from '../../../../node_modules/rxjs/internal-compatibility'
+import {errorObject} from 'rxjs/internal-compatibility'
 
 @Component({
   selector: 'app-login-form',
