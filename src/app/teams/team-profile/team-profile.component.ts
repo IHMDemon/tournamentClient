@@ -59,12 +59,26 @@ export class TeamProfileComponent implements OnInit {
     }
 
 
-    // deleteThisTeam(){
-    //   this.TeamService.deleteATeam(this.theActualTeam._id)
-    //   .subscribe((res)=>{
-    //     // ROUTER NAVIGATE TO MY TEAMS: set up the my teams in express
-    //   });
-    // }
+    deleteThisTeam(){
+      console.log('delete button clicked')
+      this.TeamService.deleteThisTeam(this.theActualTeam._id)
+      .subscribe((afterTheDeletingHasHappened)=>{
+        this.router.navigate(['/allteams'])
+      })
+        // ROUTER NAVIGATE TO MY TEAMS: set up the my teams in express
+      
+    }
+
+    updateThisTeam(){
+      console.log("-=-=-=-=-=-=-=-=-=-=-=-",this.theActualTeam)
+      this.TeamService.updateTeam(this.theActualTeam._id, this.theActualTeam)
+      .subscribe((afterTheUpdateOfTeamIsDone)=>{
+      // we should change this.router line to show user that a change was successful 
+        // this.router.navigate([`/team/${this.theActualTeam._id}`])
+        console.log('change was a success!')
+
+      })
+    }
 
 
 

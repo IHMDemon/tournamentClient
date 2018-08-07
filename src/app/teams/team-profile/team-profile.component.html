@@ -16,37 +16,44 @@
 <div *ngIf="theLoggedInUser && theActualTeam.teamCaptain._id === theLoggedInUser._id">
   Only Team Captains Can See This :)
 <br>
-<button (click) = "showTeamForm()">Edit this Team</button>
+<button (click) = "isShowingForm = !isShowingForm">Edit this Team</button>
 <br>
 
 <div *ngIf="showMe">
     <h1 style="color:red">WARNING</h1>
     <h6>Once you delete your team, there is no going back. Are you sure?</h6>
 
-    <button style ="background-color: red; border-radius: 5px; padding: 5px;" (click)="deleteThisTeam()">Destroy this Team</button>
+    <button class="TRUE-DELETE" style ="background-color: red; border-radius: 5px; padding: 5px;" (click)="deleteThisTeam()">Destroy this Team</button>
     </div>
 
     <br>
 <button (click) ="showMe = !showMe">Delete this Team</button>
 </div>
 
-
+<br>
+<br>
 <div *ngIf="isShowingForm">
-  <br>
-  <!-- <form (ngSubmit)="editRide()"> -->
-  <label for="ride-name-input"> Ride Name </label>
-  <!-- <input type="text" id="ride-name-input" placeholder=" " [(ngModel)]="rideInfo.updateName" name="updateName"> -->
-  <br>
-  <label for="ride-distance-input"> miles </label>
-  <!-- <input type="text" id="ride-distance-input" placeholder=" 100" [(ngModel)]="rideInfo.rupdateDistance" name="updateDistance"> -->
-  <br>
-  <label for="ride-category-input"> category </label>
-  <!-- <input type="text" id="ride-category-input" placeholder=" A B or C" [(ngModel)]="rideInfo.updateCategory" name="updateCategory"> -->
-  <br>
-  <label for="ride-date-input">Enter new date of the ride</label>
-  <!-- <input id="ride-date-input" type="date" [(ngModel)]="rideInfo.rupdateDate" name="updateDate"> -->
-  <br> `
-  <button class="btn"> Save </button>
+  <form (submit) = "updateThisTeam()">
+
+    <label for="Team Name">Team Name</label><br>
+    <input type="text" id=teamName-input [(ngModel)]="theActualTeam.teamName" [value]="theActualTeam._id" name="id">
+    <br>
+    <br>
+    <label>Team Logo URL</label>
+    <br><input  [(ngModel)]="theActualTeam.teamLogo" name="teamName" type="text">
+    <br>
+    <br>
+  
+    <label>Team Description</label>
+    <br><textarea [(ngModel)]="theActualTeam.teamDescription" name="teamDescription" type="text" [value]="theActualTeam.teamDescription"></textarea>
+    <br>
+    <br>
+
+    
+  
+    <button>Save Changes</button>
+  </form>
+
 
 
 
