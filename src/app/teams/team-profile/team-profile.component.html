@@ -1,8 +1,13 @@
 <h3>Team "{{theActualTeam.teamName}}"</h3>
-<!-- need the better img syntax here -->
-<img src ={{theActualTeam.teamLogo}} width =200px >
+<!-- BAD IMAGE SYNTAX -->
+<!-- <img src ={{theActualTeam.teamLogo}} width =200px >
 <p><b>Description:  </b>  <i>{{theActualTeam.teamDescription}}</i></p>
-<p><b>Captain:   </b>  {{theActualTeam.teamCaptain.username}}</p>
+<p><b>Captain:   </b>  {{theActualTeam.teamCaptain.username}}</p> -->
+
+<!-- this is the proper img syntax -->
+<img [src] ="theActualTeam.teamLogo" width =200px >
+<p>Description: <i>{{theActualTeam.teamDescription}}</i></p>
+<p>Captain: {{theActualTeam.teamCaptain}}</p>
 
 
 
