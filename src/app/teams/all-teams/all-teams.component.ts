@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService} from '../../services/user.service'
 import { TeamService } from '../../services/team.service';
+import { TournamentService } from '../../services/tournament.service';
 import { ActivatedRoute } from '@angular/router';
-import {Router, Route} from '@angular/router';
+import { Router, Route} from '@angular/router';
 @Component({
   selector: 'app-all-teams',
   templateUrl: './all-teams.component.html',
@@ -14,10 +15,12 @@ export class AllTeamsComponent implements OnInit {
 theLoggedInUser: any = {}
  theError: any;
   allTheTeams: Array<any>;
-  constructor(public TeamService: TeamService,
+  constructor(
+    public TeamService: TeamService,
     public userService: UserService,
     public router: Router,
-    public activatedRoute: ActivatedRoute
+    public activatedRoute: ActivatedRoute,
+    public tournamentService: TournamentService,
   ) { }
     getAllTheTeams(){
       this.TeamService.getteams()
