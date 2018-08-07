@@ -19,10 +19,8 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 import { TeamProfileComponent } from './teams/team-profile/team-profile.component';
 import { TeamEditformComponent } from './teams/team-editform/team-editform.component';
 import { AllTeamsComponent } from './teams/all-teams/all-teams.component';
-
 import { TeamsComponent } from './teams/teams.component';
 import { JoinTeamComponent } from './teams/join-team/join-team.component';
-
 
 const routes: Routes = [
   {
@@ -96,7 +94,6 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-
     RouterModule.forRoot(
       routes,
     {enableTracing: true}
