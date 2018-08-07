@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../services/user.service'
-import {ActivatedRoute} from '@angular/router'
-import {Router, Route} from '@angular/router'
-import {FormsModule} from '@angular/forms'
-import {errorObject} from 'rxjs/internal-compatibility'
+import {UserService} from '../../services/user.service';
+import {ActivatedRoute} from '@angular/router';
+import {Router, Route} from '@angular/router';
+import {FormsModule} from '@angular/forms';
+import {errorObject} from 'rxjs/internal-compatibility';
 
 @Component({
   selector: 'app-main-menu',
