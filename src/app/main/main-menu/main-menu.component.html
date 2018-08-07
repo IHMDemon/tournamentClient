@@ -2,10 +2,25 @@
 
 <div *ngIf="theLoggedInUser !== undefined ">
     <h2>Welcome, {{theLoggedInUser.username|json}}</h2>
+
+    <h3>See the teams I'm in</h3>
+    <h3>See the teams I run</h3>
+
+
+    <h3>See my tournaments</h3>
+    <h3>See the tournments I'm running</h3>
+
+
+
     <h3>create tournament -- tournament/create</h3> 
     <h3>create team -- team/create</h3>  
     <h3>join team -- team/addUser</h3>
     <h3>spectate -- tournament</h3>
+
+    
+
+
+
 </div>
 
 <div *ngIf="theLoggedInUser === undefined">
