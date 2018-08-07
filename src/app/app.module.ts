@@ -23,11 +23,15 @@ import { TeamsComponent } from './teams/teams.component';
 import { JoinTeamComponent } from './teams/join-team/join-team.component';
 
 const routes: Routes = [
+  { path: 'home',
+  // redirectTo: '/',will test you later.
+  // pathMatch: 'full'
+    component: MainMenuComponent
+  },
   {
     path: 'allteams',
     component: AllTeamsComponent
   },
-
   {
     path: 'team/creation',
     component: TeamCreationComponent
@@ -43,16 +47,11 @@ const routes: Routes = [
   { path: 'login',
     component: LoginFormComponent
   },
-  { path: 'home',
-  // redirectTo: '/',will test you later.
-  // pathMatch: 'full'
-    component: MainMenuComponent
+  { path: 'tournament', 
+    component: TournamentComponent 
   },
   { path: 'tournament/teamlist',  
     component: TeamCreationComponent 
-  },
-  { path: 'tournament', 
-    component: TournamentComponent 
   },
   { path: 'tournament/create', 
     component: TournamentCreateComponent 
