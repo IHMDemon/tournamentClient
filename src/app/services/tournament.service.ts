@@ -3,13 +3,14 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { RouterModule, Routes } from '@angular/router';
 import 'rxjs/add/operator/map';
+import { AllTeamsComponent } from '../teams/all-teams/all-teams.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TournamentService {
-
-  constructor(private myhttp: Http) { }
+  serviceTeamList:Array<any> = [];
+  constructor(private myhttp: Http, public allTeamsComponent:AllTeamsComponent) { }
 
   handleError(e) {
     console.log(e);

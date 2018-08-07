@@ -1,21 +1,16 @@
 <h3>YOU REACHED THE TOURNAMENT MAIN PAGE</h3>
-<hr>
 <div class = "left">
 <app-all-teams></app-all-teams>
 </div>
 <!-- INSERT NGFOR AND NGIF TO SEPARATE THE TEAMS -->
 <div class = "right">
-<app-team-profile></app-team-profile>
 <app-tournament-bracket></app-tournament-bracket>
 </div>
 
-<hr>
-<!-- 
-
-<div *ngFor = "let team of allTheTeams">
-    <h6>Team Name:{{team.teamName}}</h6>
-    <a [routerLink] = "['/team', team._id]">Team details</a>
-    <br>
-    <button (click) = "deleteTeam(team._id)">Delete</button>
-    <button (click) = "editTeam(team._id)">Edit</button>
-</div> -->
+<!--  <div *ngFor = "let team of allTheTeams">
+      <h6>Team Name:{{team.teamName}}</h6>
+      <a [routerLink] = "['/team', team._id]">Team details</a>
+      <br>
+      <button (click) = "deleteTeam(team._id)">Delete</button>
+      <button (click) = "editTeam(team._id)">Edit</button>
+      </div> -->

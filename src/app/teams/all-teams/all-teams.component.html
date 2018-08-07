@@ -2,7 +2,7 @@
     <h6>Team Name:{{team.teamName}}</h6>
     <a [routerLink] = "['/team', team._id]">Team details</a>
     <br>
-    <button (click) = "addToTournament(team._id)">Add</button>
+    <button (click) = "addToBracket(team)">Add</button>
     <button (click) = "deleteTeam(team._id)">Delete</button>
     <button (click) = "editTeam(team._id)">Edit</button>
 </div>
