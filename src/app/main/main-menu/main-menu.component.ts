@@ -23,7 +23,7 @@ export class MainMenuComponent implements OnInit {
 
   errorCallback(errorObject){
     this.theError = errorObject;
-    this.theLoggedInUser = {username:'', password:''};
+    this.theLoggedInUser = undefined;
   }
 
 

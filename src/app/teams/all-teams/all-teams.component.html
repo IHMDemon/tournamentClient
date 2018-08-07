@@ -1,4 +1,22 @@
-<h3>LIST OF TEAMS</h3>
+<h3>ALL TEAMS</h3>
+<h5>Which team are you rooting for? Check them out below!</h5>
+<hr>
+<div *ngIf="theLoggedInUser !== undefined ">
+    <p>Hi {{theLoggedInUser.username}},</p>
+    <a routerLink="/team/creation">Click here to make a team</a>
+    <hr>
+</div>
+
+<div *ngIf="theLoggedInUser === undefined">
+        <p>Want to make a team?</p>
+        <a routerLink="/signup">Click here to sign up</a>
+        <br>
+        <a routerLink="/login">Click here to login</a>
+        <hr>
+    </div>
+
+
+
 <div *ngFor = "let team of allTheTeams">
 <p>Team Name:{{team.teamName}} <br> 
     <!-- THIS IS THE PROPER WAY TO ROUTERLINK -->

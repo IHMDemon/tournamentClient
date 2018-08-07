@@ -1,15 +1,27 @@
-<button *ngIf="theLoggedInUser" (click)="logMeOut()">Log Out</button>
+
+
+<div *ngIf="theLoggedInUser !== undefined ">
+    <h2>Welcome, {{theLoggedInUser.username|json}}</h2>
+    <h3>create tournament -- tournament/create</h3> 
+    <h3>create team -- team/create</h3>  
+    <h3>join team -- team/addUser</h3>
+    <h3>spectate -- tournament</h3>
+</div>
+
+<div *ngIf="theLoggedInUser === undefined">
+     <h2> Hi there, spectator</h2>
+
+     <p> Feel free to check out all the tournaments, teams, and players involved!</p>
+     <p> If you want to make your own tournament/team,<a routerLink="/signup">sign up here</a>
+     </p>
+        <br>
+        <hr>
+    </div>
 
 
 
 
-<h2>Welcome, {{theLoggedInUser.username|json}}</h2>
-<h3>create tournament -- tournament/create</h3> 
-<h3>create team -- team/create</h3>  
-<h3>join team -- team/addUser</h3>
-<h3>spectate -- tournament</h3>
 
 <!-- THESE ARE JUST LINKS WITH EXTRA BACKEND UPDATE FEATURES -->
 <!-- EVAN CAN START DESIGNING THIS -->
 
-<button (click)="app-component.checkIfTheUserIsLoggedIn()">check if logged in </button>

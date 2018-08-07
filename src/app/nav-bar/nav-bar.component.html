@@ -18,9 +18,8 @@
       </li>
       <li class="nav-item">
 
-        <a class="nav-link" routerLink="/team/creation">team</a>
-        <a class="nav-link" routerLink="/allteams">Team List</a>
-        
+        <a class="nav-link" routerLink="/allteams">teams</a>
+
 
       </li>
       <li class="nav-item">
@@ -42,7 +41,7 @@
       </li>
     </ul>
     <span class="navbar-text">
-        Navbar text with an inline element
+        <button *ngIf="theLoggedInUser !==undefined" (click)="logMeOut()">Log Out</button>
       </span>
   </div>
 </nav>

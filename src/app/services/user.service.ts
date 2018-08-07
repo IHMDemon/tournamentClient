@@ -39,6 +39,13 @@ export class UserService {
     .catch(this.handleError);
   }
 
+  logoutUser() {                                              //WE NEED THIS EMPTY BRACKET TO LOGOUT
+    return this.myhttp.post(`http://localhost:3000/api/logout`, {}, {withCredentials: true})
+      .map(res => res.json())
+      .catch(this.handleError);
+  }
+
+
 
   // updateTournament
   // deleteTeam(){

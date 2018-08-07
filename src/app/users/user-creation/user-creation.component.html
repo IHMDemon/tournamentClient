@@ -3,14 +3,20 @@
 <form (submit)="createUser()">
   
   <label>Username</label>
-  <input [(ngModel)]="theNewUser.username" name="blah" type="text">
-  
+  <br>
+    <input [(ngModel)]="theNewUser.username" name="blah" type="text">
+  <br>
+  <br>
+
   <label>Password</label>
-  <input [(ngModel)]="theNewUser.password" name="blah" type="text">
+  <br>
+    <input [(ngModel)]="theNewUser.password" name="blah" type="text">
+  <br>
   <button>Signup</button>
 </form>
 <div class ="aProblem" *ngIf="theError">{{theError}}</div>
   
+    <p>Already have an account?<a routerLink="/login">  login</a></p>
 
 <!-- THIS WILL BE THE AREA WHERE THE USER EDIT'S HIS/HER OWN PROFILE COMPLETELY-->
 <!-- THE CURRENT FORM RESIDING IN IT WILL BE TRANSFERRED TO SIGN-UP FORM COMPONENT  -->
