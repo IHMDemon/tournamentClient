@@ -25,6 +25,7 @@ export class TeamCreationComponent implements OnInit {
 
   addNewTeam() {
     this.newTeam.teamCaptain = this.theLoggedInUser._id
+    console.log('====================================>',this.newTeam.teamCaptain.username)
     console.log("creating new team");
     console.log(this.newTeam, );
     this.TeamService.createTeam(this.newTeam)

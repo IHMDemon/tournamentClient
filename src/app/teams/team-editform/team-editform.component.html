@@ -1,3 +1,27 @@
 <h3>INSERT TEAM EDIT FORM PROFILE</h3>
 <!-- INSERT BUTTONS AND FORMS AND SHIT BUT MAKE SOME OF THEM DISAPPEAR DEPENDING -->
 <!-- ON WHAT THE USER'S ROLE IS -->
+<form (ngSubmit) = "updateTeam()">
+
+  
+    <input type="text" id=teamName-input [(ngModel)]="theActualTeam.teamName" [value]="theActualTeam._id" name="id">
+  
+    <label>Team Name</label>
+    <br><input  [(ngModel)]="theActualTeam.teamName" name="teamName" type="text">
+    <br>
+    <br>
+  
+    <label>Team Description</label>
+    <br><textarea [(ngModel)]="theActualTeam.teamDescription" name="teamDescription" type="text" [value]="theActualTeam.teamDescription"></textarea>
+    <br>
+    <br>
+  
+    <label>Team Logo</label>
+    <br><input [(ngModel)]="theActualTeam.teamLogo" name="teamLogo" type="text">
+        
+   
+    <br>
+    <br>
+  
+    <button>Update Team Infos</button>
+  </form>
