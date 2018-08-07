@@ -1,4 +1,9 @@
 <h3>Team "{{theActualTeam.teamName}}"</h3>
+<!-- BAD IMAGE SYNTAX -->
+<!-- <img src ={{theActualTeam.teamLogo}} width =200px >
+<p><b>Description:  </b>  <i>{{theActualTeam.teamDescription}}</i></p>
+<p><b>Captain:   </b>  {{theActualTeam.teamCaptain.username}}</p> -->
+
 <!-- this is the proper img syntax -->
 <img [src] ="theActualTeam.teamLogo" width =200px >
 <p>Description: <i>{{theActualTeam.teamDescription}}</i></p>
@@ -8,12 +13,23 @@
 
 
 
-<div *ngIf="theLoggedInUser && theActualTeam.teamCaptain === theLoggedInUser._id">
+<div *ngIf="theLoggedInUser && theActualTeam.teamCaptain._id === theLoggedInUser._id">
   Only Team Captains Can See This :)
 <br>
-<button (click) = "deleteTeam(team._id)">Delete</button>
+<button (click) = "editTeam()">Edit this Team</button>
 <br>
-<button (click) = "editTeam(team._id)">Edit</button>
+
+<div *ngIf="showMe">
+    <h1 style="color:red">WARNING</h1>
+    <h6>Once you delete your team, there is no going back. Are you sure?</h6>
+
+    <button style ="background-color: red; border-radius: 5px; padding: 5px;" (click)="deleteThisTeam()">Destroy this Team</button>
+    </div>
+
+    <br>
+<button (click) ="showMe = !showMe">Delete this Team</button>
 </div>
+
+
 
 
