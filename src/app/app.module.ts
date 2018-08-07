@@ -19,7 +19,6 @@ import { LoginFormComponent } from './users/login-form/login-form.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
 import { TeamProfileComponent } from './teams/team-profile/team-profile.component';
 import { TeamEditformComponent } from './teams/team-editform/team-editform.component';
-
 import { TeamListComponent } from './teams/team-list/team-list.component';
 import { TeamsComponent } from './teams/teams.component';
 import { JoinTeamComponent } from './teams/join-team/join-team.component';
