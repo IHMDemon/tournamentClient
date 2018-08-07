@@ -17,7 +17,7 @@ import { MainMenuComponent } from './main/main-menu/main-menu.component';
 import { SignupFormComponent } from './users/signup-form/signup-form.component';
 import { LoginFormComponent } from './users/login-form/login-form.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
-// import { TeamProfileComponent } from './teams/team-profile/team-profile.component';
+import { TeamProfileComponent } from './teams/team-profile/team-profile.component';
 import { TeamEditformComponent } from './teams/team-editform/team-editform.component';
 import { AllTeamsComponent } from './teams/all-teams/all-teams.component';
 import { TeamsComponent } from './teams/teams.component';
@@ -29,13 +29,14 @@ const routes: Routes = [
     path: 'allteams',
     component: AllTeamsComponent
   },
-  // {
-  //   path:'team/:id',
-  //   component: TeamProfileComponent
-  // },
+
   {
     path: 'team/creation',
     component: TeamCreationComponent
+  },
+  {
+    path:'team/:id',
+    component: TeamProfileComponent
   },
   
   { path: 'signup', 
@@ -58,6 +59,7 @@ const routes: Routes = [
   { path: 'tournament/create', 
     component: TournamentCreateComponent 
   },
+
   { path: '', 
     redirectTo: '/',
     pathMatch: 'full'
@@ -84,7 +86,7 @@ const routes: Routes = [
     SignupFormComponent,
     LoginFormComponent,
     UserProfileComponent,
-    // TeamProfileComponent,
+    TeamProfileComponent,
     TeamEditformComponent,
     AllTeamsComponent,
     TeamsComponent,

@@ -20,16 +20,16 @@ export class TeamProfileComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    // this.allTeamsRoute.params //this allows us to grab the id from the browser URL and pull that teams info
-    // .subscribe((params)=>{
-    //   console.log("1st=-=-=-=--=-=-=-=-=-=-=-=-=-=-1st")
-    //   this.TeamService.getJustOneTeam(params['id'])
-    //   .subscribe((theTeamThatWeGetFromTeamService)=>{
-    //     console.log('Team', theTeamThatWeGetFromTeamService)
-    //     this.theActualTeam = theTeamThatWeGetFromTeamService;
-    //     console.log(this.theActualTeam);
-    //   })
-    // });
+    this.allTeamsRoute.params //this allows us to grab the id from the browser URL and pull that teams info
+    .subscribe((params)=>{
+      console.log("1st=-=-=-=--=-=-=-=-=-=-=-=-=-=-1st")
+      this.TeamService.getJustOneTeam(params['id'])
+      .subscribe((theTeamThatWeGetFromTeamService)=>{
+        console.log('Team', theTeamThatWeGetFromTeamService)
+        this.theActualTeam = theTeamThatWeGetFromTeamService;
+        console.log(this.theActualTeam);
+      })
+    });
  
   }
 
