@@ -16,7 +16,7 @@
 <div *ngIf="theLoggedInUser && theActualTeam.teamCaptain._id === theLoggedInUser._id">
   Only Team Captains Can See This :)
 <br>
-<button (click) = "showTeamForm()">Edit this Team</button>
+<button (click) = "isShowingForm =!isShowingForm">Edit this Team</button>
 <br>
 
 <div *ngIf="showMe">
