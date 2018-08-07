@@ -12,7 +12,6 @@ export class TeamService {
   constructor(private myHttp: Http) { }
 
   handleError(e) {
-    console.log(e);
      return Observable.throw(e.json().message);
   }
 

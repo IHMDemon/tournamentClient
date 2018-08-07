@@ -1,6 +1,7 @@
 <h3>LIST OF TEAMS</h3>
 <div *ngFor = "let team of allTheTeams">
 <p>Team Name:{{team.teamName}} <br> 
+    <!-- THIS IS THE PROPER WAY TO ROUTERLINK -->
     <a [routerLink] = "['/team', team._id]">Team details.</a>
 </p>
 <br>

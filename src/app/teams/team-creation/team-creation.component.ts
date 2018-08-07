@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { UserService } from '../../services/user.service';
-import {ActivatedRoute} from '../../../../node_modules/@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {Router, Route} from '@angular/router'
 @Component({
   selector: 'app-team-creation',
