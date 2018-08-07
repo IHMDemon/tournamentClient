@@ -10,10 +10,21 @@ import { Router, Route} from '@angular/router'
   styleUrls: ['./team-profile.component.css']
 })
 export class TeamProfileComponent implements OnInit {
+
+
+  team ={
+    theTeamName: "",
+    theTeamLogo: "",
+    updatedDescription: ""
+    
+  }
+
+
   
   theError:        any;
   theLoggedInUser: any = {}
   theActualTeam: any = {}
+  isShowingForm:any;
 
   constructor(public TeamService: TeamService,
      public userService: UserService,
@@ -48,12 +59,12 @@ export class TeamProfileComponent implements OnInit {
     }
 
 
-    deleteThisTeam(){
-      this.TeamService.deleteATeam(this.theActualTeam._id)
-      .subscribe((res)=>{
-        // ROUTER NAVIGATE TO MY TEAMS: set up the my teams in express
-      });
-    }
+    // deleteThisTeam(){
+    //   this.TeamService.deleteATeam(this.theActualTeam._id)
+    //   .subscribe((res)=>{
+    //     // ROUTER NAVIGATE TO MY TEAMS: set up the my teams in express
+    //   });
+    // }
 
 
 
@@ -82,7 +93,30 @@ export class TeamProfileComponent implements OnInit {
     });
  
   }
+  showTeamForm() {
+    this.isShowingForm = true;
+  } 
 
+  // updateThisTeam(id){ //trigger for the submit
+  //   this.TeamService
+  //   .updateTeam(id)
+  //   .toPromise()
+  //   .then((teamFromDb)=>{
+  //     this.team ={
+  //       updatedName: "",
+  //       updatedLogo: "",
+  //       updatedDescription: ""
+        
+  //     }
+  //     this.team = this.theActualTeam;
+  //     this.saveError = "";
+  //   })
+  //   .catch((err)=>{
+  //     const parsedError = err.json();
+  //     this.saveError = parsedError.message + "";
+  //   })
+  
+  // }
 }
 
 
