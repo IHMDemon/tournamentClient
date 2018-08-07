@@ -11,6 +11,8 @@ import { Router, Route} from '@angular/router';
 })
 export class AllTeamsComponent implements OnInit {
 
+firstTeam:Array<any> = [];
+secondTeam:Array<any> = [];
 
 theLoggedInUser: any = {}
  theError: any;
@@ -22,11 +24,23 @@ theLoggedInUser: any = {}
     public activatedRoute: ActivatedRoute,
     public tournamentService: TournamentService,
   ) { }
+
+    addToTeam(teamToAdd, teams){
+      if(teams.indexOf(teamToAdd)%2 === 0){
+        this.firstTeam.unshift(teamToAdd);
+      }
+      else if(teams.indexOf(teamToAdd)%2 === 1){
+        this.secondTeam.unshift(teamToAdd)
+      }
+      else{
+        console.log("team does not exist")
+      }
+    }
+
     getAllTheTeams(){
       this.TeamService.getteams()
       .subscribe((res)=>{
         this.allTheTeams = res;
-
       })
     }
   ngOnInit() {
