@@ -11,6 +11,12 @@
 
 .link-text{
   position: relative;
-  bottom: 50px;
+  bottom: 35px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-page{
   text-align: center;
 }

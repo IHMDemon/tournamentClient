@@ -1,18 +1,13 @@
 
 
 <div *ngIf="theLoggedInUser !== undefined ">
-    <h2>Welcome, {{theLoggedInUser.username|json}}</h2>
-
-    <h3>See the teams I'm in</h3>
-    <h3>See the teams I run</h3>
-
-
-    <h3>See my tournaments</h3>
-    <h3>See the tournments I'm running</h3>
-
+    <header class ="welcome-page">Welcome, {{theLoggedInUser.username|json}}</header>
+    <br>
+    <br>
     <!-- ['/team', teamId, 'user', userName, {details: true}] -->
     <!-- For instance ['/team', teamId, 'user', userName, {details: true}]  -->
     <!-- means that we want to generate a link to /team/11/user/bob;details=true. -->
+    
     <div class = "container">
     <div>
         <input type="image" src="https://cdn.pixabay.com/photo/2017/09/03/17/19/beach-2711264_960_720.jpg" name="saveForm" class="btn-images" id="saveForm" routerLink = "/tournament/create">
