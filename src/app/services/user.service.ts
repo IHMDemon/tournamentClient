@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import {Subject} from 'rxjs/Subject';
+//YOU NEED PROD TO DO THE ENVIRONMENT VARIABLE. IT KNOWS WHICH ONE TO USE DURING PRODUCTION AUTOMATICALLY
+import {environment} from '../../environments/environment'
 
+//CHANGING ROUTES.
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -15,6 +18,9 @@ export class UserService {
 
   constructor(public myhttp: Http) { }
 
+  //linke variable.
+  baseUrl: any = environment.url_base;
+
   handleError(e) {
      return Observable.throw(e.json().message);
   }
@@ -26,13 +32,13 @@ export class UserService {
 
 
   createUser(theNewUser) {
-    return this.myhttp.post(`http://localhost:3000/api/signup`, theNewUser, {withCredentials: true})
+    return this.myhttp.post(`${this.baseUrl}/api/signup`, theNewUser, {withCredentials: true})
       .map(res => res.json())
       .catch(this.handleError);
 
   }
   loginUser(theUserToLogIn) {
-    return this.myhttp.post(`http://localhost:3000/api/login`, theUserToLogIn, {withCredentials: true})
+    return this.myhttp.post(`${this.baseUrl}/api/login`, theUserToLogIn, {withCredentials: true})
     .map((res)=>{
       this.tellNavToCheckLogin(res);
       res.json();
@@ -42,7 +48,7 @@ export class UserService {
   }
 
   checkIfLoggedIn() {
-    return this.myhttp.get('http://localhost:3000/api/loggedin', {withCredentials: true})
+    return this.myhttp.get(`${this.baseUrl}/api/loggedin`, {withCredentials: true})
     .map((res)=> {
       return JSON.parse((<any>res)._body);
 
@@ -54,7 +60,7 @@ export class UserService {
 
 
   logoutUser() {                                              //WE NEED THIS EMPTY BRACKET TO LOGOUT
-    return this.myhttp.post(`http://localhost:3000/api/logout`, {}, {withCredentials: true})
+    return this.myhttp.post(`${this.baseUrl}/api/logout`, {}, {withCredentials: true})
     .map((res)=>{
       this.tellNavToCheckLogin(res);
       res.json();
