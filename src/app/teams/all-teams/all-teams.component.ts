@@ -4,6 +4,7 @@ import { TeamService } from '../../services/team.service';
 import { TournamentService } from '../../services/tournament.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router, Route} from '@angular/router';
+
 @Component({
   selector: 'app-all-teams',
   templateUrl: './all-teams.component.html',
@@ -11,12 +12,14 @@ import { Router, Route} from '@angular/router';
 })
 export class AllTeamsComponent implements OnInit {
 
-firstTeam:Array<any> = [];
-secondTeam:Array<any> = [];
-
-theLoggedInUser: any = {}
- theError: any;
+  firstTeam:Array<any> = [];
+  secondTeam:Array<any> = [];
+  theLoggedInUser: any = {}
+  theError: any;
   allTheTeams: Array<any>;
+  // teamBracketBitch: Array<any>;
+  // theBracket: any = {};
+  
   constructor(
     public TeamService: TeamService,
     public userService: UserService,
@@ -25,17 +28,37 @@ theLoggedInUser: any = {}
     public tournamentService: TournamentService,
   ) { }
 
-    addToTeam(teamToAdd, teams){
-      if(teams.indexOf(teamToAdd)%2 === 0){
-        this.firstTeam.unshift(teamToAdd);
-      }
-      else if(teams.indexOf(teamToAdd)%2 === 1){
-        this.secondTeam.unshift(teamToAdd)
-      }
-      else{
-        console.log("team does not exist")
-      }
-    }
+    
+    // becomes a worthless piece of shit code if
+    // I get express working which I have no idea 
+    // how I fucking do it note to self work on 
+    // express first fuck the angular side and 
+    // fuck it with a straw
+    //
+    //
+    // assignAllTeamsToBracket(){
+    //   this.TeamService.getteams()
+    //   .subscribe((res)=>{
+    //     this.teamBracketBitch = res;
+    //     if(this.teamBracketBitch.length%2 === 0){
+    //     for(let x=0; x <= this.teamBracketBitch.length-1;x++){
+    //       if(x%2 === 0){
+    //         this.secondTeam.unshift(this.teamBracketBitch[x]);
+    //         }
+    //         else if (x%2 === 1){
+    //           this.firstTeam.unshift(this.teamBracketBitch[x]);
+    //         }
+    //         else {console.log("I'm inside all-teams component ts");}
+    //     }
+    //     this.theBracket = {
+    //       firstTeam: this.firstTeam,
+    //       secondTeam: this.secondTeam
+    //     }
+    //     console.log(this.theBracket);
+    //     return this.theBracket;
+    //   } else {console.log("YOU NEED ONE MORE TEAM BEFORE WE CAN START")}
+    //   })
+    // }
 
     getAllTheTeams(){
       this.TeamService.getteams()
@@ -47,7 +70,6 @@ theLoggedInUser: any = {}
     console.log("listofteams=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-listofteams")
     this.checkIfLoggedIn();
     this.getAllTheTeams();
-
   }
 
 

@@ -1,13 +1,23 @@
+<button (click) = "assignAllTeamsToBracket()">ASSIGN TEAMS TO BRACKET</button>
+
 <div class = "container">
-	<app-team-profile></app-team-profile>
-	<img src = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Versus_sign.png">
-	<app-team-profile></app-team-profile>
-</div>
+	<div *ngFor = "let team of this.theBracket" class = "first team">
+		{{team.firstTeam.teamCaptain|json}}
+		
+		<img src = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Versus_sign.png" class = "versus">
+		{{team.secondTeam.teamCaptain|json}}
+	</div>
+
+	
 
 
 
+	<!-- <ion-list ion-item *ngFor="let item of singleArray;"  >
 
-
+		{{item.bil}} <button round>{{item.stat}}</button>
+	
+	</ion-list> -->
+	
 
 
 
