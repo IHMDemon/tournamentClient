@@ -28,8 +28,6 @@ export class TournamentDetailsComponent implements OnInit {
   
   ) { }
 
-  // example 
-  // this.newTeam.teamCaptain = this.theLoggedInUser._id
 
   userJoiningTournament(){ 
     console.log(`${this.theLoggedInUser.username} wants to join this tournament: ${this.theActualTournament.tournamentName}`)

@@ -66,6 +66,10 @@ const routes: Routes = [
     component: TournamentDetailsComponent
   },
 
+  {
+    path:'user/:id',
+    component: UserProfileComponent
+  },
 
   { path: '', 
     redirectTo: '/',

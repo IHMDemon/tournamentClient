@@ -31,6 +31,8 @@ export class UserService {
 
 
 
+
+
   createUser(theNewUser) {
     return this.myhttp.post(`${this.baseUrl}/api/signup`, theNewUser, {withCredentials: true})
       .map(res => res.json())
@@ -57,6 +59,11 @@ export class UserService {
     .catch(this.handleError);
   }
 
+
+  getJustOneUser(theIdOfTheUser){
+    return this.myhttp.get(`${this.baseUrl}/api/profile/${theIdOfTheUser}`)
+    .map((res)=> res.json());
+  }
 
 
   logoutUser() {                                              //WE NEED THIS EMPTY BRACKET TO LOGOUT
