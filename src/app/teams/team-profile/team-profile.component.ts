@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { UserService } from '../../services/user.service';
+import { TournamentService} from '../../services/tournament.service'
 import { ActivatedRoute } from '@angular/router';
 import { Router, Route} from '@angular/router'
 

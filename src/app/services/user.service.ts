@@ -52,6 +52,7 @@ export class UserService {
   checkIfLoggedIn() {
     return this.myhttp.get(`${this.baseUrl}/api/loggedin`, {withCredentials: true})
     .map((res)=> {
+      res.json();
       return JSON.parse((<any>res)._body);
 
     })

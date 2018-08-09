@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TournamentService } from '../../services/tournament.service';
 import { UserService } from '../../services/user.service';
 import { TeamService } from '../../services/team.service';
+import { Router, ActivatedRoute}       from '@angular/router'
 
 @Component({
   selector: 'app-tournament-create',
@@ -14,7 +15,7 @@ export class TournamentCreateComponent implements OnInit {
   teams:          Array<any>;
   teamToDelete:   any = {};
   
-  constructor(public tournamentService: TournamentService, public userService: UserService, public teamService: TeamService) { }
+  constructor(public tournamentService: TournamentService, public userService: UserService, public teamService: TeamService, public router: Router, public ActivatedRoute: ActivatedRoute) { }
   
   theLoggedInUser: any = {}
   theError:        any;
@@ -28,7 +29,8 @@ export class TournamentCreateComponent implements OnInit {
 
   errorCallback(errorObject){
     this.theError = errorObject;
-	  // this.router.navigate(['login']);
+    // this.router.navigate(['login']);
+    this.router.navigate(['/login']);
     this.theLoggedInUser = {username:'', password:''};
   }
 

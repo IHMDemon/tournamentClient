@@ -1,7 +1,6 @@
 <h3>Details for "{{theActualTournament.tournamentName}}"</h3>
 
-
-<p> Administrator: <a [routerLink] = "['/user', theActualTournament.tournamentAdministrator._id]"> {{theActualTournament.tournamentAdministrator.username}}</a> USER PROFILE GOES HERE LATER</p>
+<p> Administrator: <a [routerLink] = "['/user', theActualTournament.tournamentAdministrator._id]"> {{theActualTournament.tournamentAdministrator.username}}</a></p>
 
       <div>User Pool: This will be an ng for with the roster of players populated.
       </div>
@@ -18,12 +17,67 @@
 <p>Winner</p>
 
 <div *ngIf="theLoggedInUser !== undefined">
-  <hr>
-  <p>Wanna play?</p>
-  <button (click)="userJoiningTournament()">Sign up for this Tournament</button>
-<hr>
+    <hr>
+    <p>Wanna play?</p>
+    <button (click)="userJoiningTournament()">Sign up for this Tournament</button>
+      <hr>
+
+  <button (click) = "teamSignUp = !teamSignUp">Sign My Team Up</button>
+
+    <div *ngIf="teamSignUp">
+
+          <h5>Choose Your Team :)</h5>         
+                <div *ngFor="let eachTeam of detailedUserInfo.teamCaptainOf">
+                   <button (click)="signUpThisTeam()">I choose {{eachTeam.teamName}}</button>
+                </div>
+
+
+
+
+
+
+
+        </div>
+
+      <hr>
 </div>
 
+
+
+
+
+
+<!-- <div>
+  <h1> YOU WILL NG IF THE TEAMCAP HAS TEAMS UNDER HIM VIA QUERY. THIS DIV WILL SWALLOW THE ONE WITH THE FUNCTION.
+    IT WILL ONLY APPEAR IF HE MEETS THE ABOVE CONDITION</h1>
+
+    E </h1>
+
+
+          <div *ngIf="{{theLoggedInUser.teamCaptainOf}}.length === 1">
+            <button (click) = "TeamJoinsTheArrayAndHeOnlyRunsOneTeam"></button>
+          </div>
+
+          <div *ngIf="{{theLoggedInUser.teamCaptainOf}}.length === 0">
+              <h5>You don't have any teams. You can make one :)</h5>
+            </div>
+
+            <div *ngIf="theLoggedInUser !== undefined && {{theLoggedInUser.teamCaptainOf}}.length > 1">
+                <h5>Choose Your Team :)</h5>
+               
+                <div *ngFor="let eachTeam of theLoggedInUser.teamCaptainOf">
+                    {{eachTeam.teamName}}
+                  
+                </div>
+
+
+
+              </div>
+
+
+    </div>
+
+</div> -->
 
 
 

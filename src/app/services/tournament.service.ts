@@ -40,11 +40,17 @@ export class TournamentService {
   }
 
   playerJoinsATournament(playerJoinsATournamentObjInfo) {
-    console.log("ObjectId of the Player and the Tournament being sent to mongo to make the additions to the arrays.")
+    console.log("ObjectId of the Player and the Tournament being sent to mongo to make the additions to their respective arrays.")
     return this.myhttp.post(`${this.baseUrl}/api/tournament/playerJoinsATournament`, playerJoinsATournamentObjInfo, {withCredentials: true})
       .map(res => res.json())
   }
 
+
+  teamJoinsATournament(teamJoinsATournamentObjInfo) {
+    console.log("ObjectId of the Team and the Tournament being sent to mongo to make the additions to their respective arrays.")
+    return this.myhttp.post(`${this.baseUrl}/api/tournament/teamJoinsATournament`, teamJoinsATournamentObjInfo, {withCredentials: true})
+      .map(res => res.json())
+  }
 
 
   updateTeam(theIdOfTheEntry){

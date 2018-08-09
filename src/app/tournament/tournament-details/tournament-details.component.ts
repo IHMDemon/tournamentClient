@@ -15,9 +15,12 @@ import { Router, Route} from '@angular/router'
 export class TournamentDetailsComponent implements OnInit {
 
   theError:        any;
-  theLoggedInUser: any = {}
-  theActualTournament: any = {}
-  userJoinsATournamentObjInfo: any = {}
+  theLoggedInUser: any = {};
+  theActualTournament: any = {};
+  theChosenTeam: any = {};
+  userJoinsATournamentObjInfo: any = {};
+  teamJoinsATournamentObjInfo: any = {};
+  detailedUserInfo: any = {};
 
   constructor(
     public userService: UserService,
@@ -49,7 +52,30 @@ export class TournamentDetailsComponent implements OnInit {
   }
 
 
+  chooseYourTeam() {
+    
+  }
 
+
+
+  teamJoiningTournament(){ 
+    console.log(`${this.theChosenTeam.teamName} wants to join this tournament: ${this.theActualTournament.tournamentName}`)
+    
+    this.teamJoinsATournamentObjInfo.tournamentId = this.theActualTournament._id;
+    this.teamJoinsATournamentObjInfo.teamId = this.theChosenTeam._id;
+    this.TournamentService.playerJoinsATournament(this.userJoinsATournamentObjInfo)
+    // this.tournamentService.playerJoinsATournament(playerJoinsATournamentObjInfo)
+    .subscribe(
+      (res) => {
+        console.log('Player successfully added to team');
+        this.router.navigate(['/users/mytournaments']); //you need to add this later.
+        //redirect with a popup message: You have successfully signed up for tournament.name, blah blah blah.
+
+      },
+      (err) => { err }
+    )
+
+  }
 
 
 
@@ -92,9 +118,16 @@ export class TournamentDetailsComponent implements OnInit {
     .subscribe((params)=>{
       this.TournamentService.getJustOneTournament(params['id'])
       .subscribe((theTournamentThatWeGetFromTournamentService)=>{
-        console.log('Tournament', theTournamentThatWeGetFromTournamentService)
         this.theActualTournament = theTournamentThatWeGetFromTournamentService;
         console.log(this.theActualTournament);
+
+
+    this.userService.getJustOneUser(this.theLoggedInUser._id)
+      .subscribe((theUserThatWeGetBackfromUserService)=>{
+        console.log(this.theLoggedInUser)
+          this.detailedUserInfo = theUserThatWeGetBackfromUserService;
+          console.log('DETAILED USER INFO', this.detailedUserInfo);
+        })    
       })
     })
   }

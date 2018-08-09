@@ -37,7 +37,7 @@ export class LoginFormComponent implements OnInit {
       (successResponse)=>{
         console.log('UserLoginSuccessful');
         this.successCallback(successResponse);
-        this.router.navigate(['home'])
+        this.router.navigate(['/home'])
       },
       (errorResponse)=>{this.errorCallback(errorResponse)}
     );

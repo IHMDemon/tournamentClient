@@ -8,28 +8,30 @@
 <hr>
 <h5>Team Member Of </h5>
   <div *ngFor="let eachSubTeam of theActualUser.teamCaptainOf">
-      <p><a [routerLink] = "['/team', eachSubTeam._id]">{{eachSubTeam.name}}</a></p>
+      <!-- <p><a [routerLink] = "['/team', eachSubTeam._id]">{{eachSubTeam.name}}</a></p> -->
       <p>Role:<b><i>Captain</i></b></p>
   </div>
 
   <div *ngFor="let eachTeam of theActualUser.teamMemberOf">
-      <p><a [routerLink] = "['/team', eachTeam._id]">{{eachTeam.name}}</a></p>
+      <!-- <p><a [routerLink] = "['/team', eachTeam._id]">{{eachTeam.name}}</a></p> -->
       <p>Role:<i>Member</i></p>
   </div>
 <hr>
 
 
 <h5>{{theActualUser.username}}'s Tournaments</h5>
-<div *ngFor="let eachSubTournament of theActualUser.tournamentAdminOf">
-    <p><a [routerLink] = "['/tournament', eachSubTournament._id]">{{eachSubTournament.name}}</a></p>
-    <p>Role:<b><i>Administrator</i></b></p>
-
-    <div *ngFor="let eachTournament of theActualUser.tournaments">
-        <p><a [routerLink] = "['/tournament', eachTournament._id]">{{eachTournament.name}}</a></p>
+  <hr>
+    <div *ngFor="let eachSubTournament of theActualUser.tournamentAdminOf">
+        <p><a [routerLink] = "['/tournament', eachSubTournament._id]">{{eachSubTournament.tournamentName}}</a></p>
         <p>Role:<b><i>Administrator</i></b></p>
+    </div>
     
-
-</div>
+    
+    <div *ngFor="let eachTournament of theActualUser.tournaments">
+            
+            <p><a [routerLink] = "['/tournament', eachTournament._id]">{{eachTournament.tournamentName}}</a></p>
+            <p>Role:<b><i>Administrator</i></b></p>
+    </div>
 
 
 <hr>

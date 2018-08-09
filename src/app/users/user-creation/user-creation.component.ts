@@ -21,8 +21,11 @@ export class UserCreationComponent implements OnInit {
   theError: any;
 
   successCallback(userObject){
-    // this.theNewUser = userObject; Removed this line of experimenation
+    this.theNewUser = userObject;
     this.theError = '';
+    this.router.navigate(['/login'])
+
+
   }
 
   errorCallback(errorObject){
