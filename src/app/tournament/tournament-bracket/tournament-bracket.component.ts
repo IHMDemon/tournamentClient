@@ -40,7 +40,11 @@ export class TournamentBracketComponent implements OnInit {
         
       }
       console.log("=>>>>>>>>>>>>>>>>",this.theBracket);
-    } else {console.log("YOU NEED ONE MORE TEAM BEFORE WE CAN START and still inside all-teams-comp")}
+    } else if(this.teamBracket.length === 1){
+      console.log("THE WINNER IS: ",this.teamBracket[0]);  
+    } else {
+      console.log("YOU NEED ONE MORE TEAM BEFORE WE CAN START and still inside all-teams-comp")
+    }
     })
   }
 
