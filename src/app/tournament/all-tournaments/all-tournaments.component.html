@@ -5,11 +5,13 @@
 
 <div *ngFor="let eachTournament of allTheTournaments">
   <h6>Tournament Name: {{eachTournament.tournamentName}}</h6>
-  <p><a [routerLink] = "['/tournament', tournament._id]">Tournament details.</a></p>
+  <a [routerLink] = "['/tournament', eachTournament._id]">Tournament details.</a>
  
- 
+
+
  <!-- Example -->
   <!-- <a [routerLink] = "['/team', team._id]">Team details.</a> -->
 
   <hr>
 </div>
+

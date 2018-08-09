@@ -17,7 +17,7 @@ export class TournamentDetailsComponent implements OnInit {
   theError:        any;
   theLoggedInUser: any = {}
   theActualTournament: any = {}
-
+  userJoinsATournamentObjInfo: any = {}
 
   constructor(public TournamentService: TournamentService,
     public userService: UserService,
@@ -27,6 +27,26 @@ export class TournamentDetailsComponent implements OnInit {
     public teamService: TeamService
   
   ) { }
+
+  // example 
+  // this.newTeam.teamCaptain = this.theLoggedInUser._id
+
+  userJoiningTournament(){ 
+    console.log(`${this.theLoggedInUser.username} wants to join this tournament: ${this.theActualTournament.tournamentName}`)
+    
+    this.userJoinsATournamentObjInfo.tournamentId = this.theActualTournament._id;
+    this.userJoinsATournamentObjInfo.playerId = this.theLoggedInUser._id;
+    this.tournamentService.playerJoinsATournament(playerJoinsATournamentObjInfo);
+
+  }
+
+
+
+
+
+
+
+
 
 
 
@@ -38,7 +58,7 @@ export class TournamentDetailsComponent implements OnInit {
     errorCallback(errorObject){
       this.theError = errorObject;
       // this.router.navigate(['login']);
-      this.theLoggedInUser = {username:'', password:''};
+      this.theLoggedInUser = undefined;
     }
   
   
@@ -55,7 +75,7 @@ export class TournamentDetailsComponent implements OnInit {
         )
     }
   
-  
+
 
 
   ngOnInit() {
