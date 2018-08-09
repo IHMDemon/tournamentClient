@@ -8,7 +8,7 @@ import { TeamService } from '../../services/team.service';
 export class TournamentBracketComponent implements OnInit {
   
   allTheTeams:Array<any>;
-  teamBracketBitch: Array<any>;
+  teamBracket: Array<any>;
   theBracket: Array<any> = [];
   firstTeam:Array<any> = [];
   secondTeam:Array<any> = [];
@@ -21,14 +21,14 @@ export class TournamentBracketComponent implements OnInit {
   assignAllTeamsToBracket(){
     this.teamService.getteams()
     .subscribe((res)=>{
-      this.teamBracketBitch = res;
-      if(this.teamBracketBitch.length%2 === 0){
-      for(let x=0; x <= this.teamBracketBitch.length-1;x++){
+      this.teamBracket = res;
+      if(this.teamBracket.length%2 === 0){
+      for(let x=0; x <= this.teamBracket.length-1;x++){
         if(x%2 === 0){
-          this.secondTeam.unshift(this.teamBracketBitch[x]);
+          this.secondTeam.unshift(this.teamBracket[x]);
           }
           else if (x%2 === 1){
-            this.firstTeam.unshift(this.teamBracketBitch[x]);
+            this.firstTeam.unshift(this.teamBracket[x]);
           }
           else {console.log("I'm inside all-teams component ts");}
       }
@@ -46,6 +46,7 @@ export class TournamentBracketComponent implements OnInit {
 
 
   ngOnInit() {
+    this.assignAllTeamsToBracket()
   }
 
 }

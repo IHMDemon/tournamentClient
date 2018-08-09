@@ -1,14 +1,27 @@
-<button (click) = "assignAllTeamsToBracket()">ASSIGN TEAMS TO BRACKET</button>
-
+<div [style.visibility]="(assignAllTeamsToBracket == 0) ? 'hidden' : 'visible' ">
+		<button (click) = "assignAllTeamsToBracket()">ASSIGN TEAMS TO BRACKET</button>
+	</div>
 <div class = "container">
 	<div *ngFor = "let team of this.theBracket" class = "team">
-		<img src = {{team.firstTeam.teamLogo}} class ="team-logo">
+	<!-- <p class = "team-name">{{team.firstTeam.teamName}}</p> -->
+	<input type="image" [src] = "team.firstTeam.teamLogo" name="saveForm" class="btn-images team-logo firstteam" id="saveForm" routerLink = "/team/{{team.firstTeam._id}}">
+	<img src = "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Versus_logo.svg/1082px-Versus_logo.svg.png" class = "versus">
+	<!-- <p class = "team-name">{{team.secondTeam.teamName}}</p> -->
+	<input type="image" [src] = "team.secondTeam.teamLogo" name="saveForm" class="btn-images team-logo secondteam" id="saveForm" routerLink = "/team/{{team.secondTeam._id}}">
+</div>
+
+
+ 
+
+		<!-- <img src = {{team.firstTeam.teamLogo}} class ="team-logo">
 		<img src = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Versus_sign.png" class = "versus">
-		<img src = {{team.secondTeam.teamLogo}} class ="team-logo">
-	</div>
+		<img src = {{team.secondTeam.teamLogo}} class ="team-logo"> -->
 
 
-
+	<!-- <div>
+			<input type="image" [src] = "team.firstTeam.teamLogo" name="saveForm" class="btn-images" id="saveForm" routerLink = "/team/{{team.firstTeam._id}}">
+			<p class = "link-text">CREATE TOURNAMENT</p> 
+	</div> -->
 
 
 	<!-- <ion-list ion-item *ngFor="let item of singleArray;"  >
