@@ -4,6 +4,7 @@ import { TeamService } from '../../services/team.service';
 import { TournamentService } from '../../services/tournament.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router, Route} from '@angular/router';
+
 @Component({
   selector: 'app-all-teams',
   templateUrl: './all-teams.component.html',
@@ -11,12 +12,12 @@ import { Router, Route} from '@angular/router';
 })
 export class AllTeamsComponent implements OnInit {
 
-firstTeam:Array<any> = [];
-secondTeam:Array<any> = [];
-
-theLoggedInUser: any = {}
- theError: any;
+  theLoggedInUser: any = {}
+  theError: any;
   allTheTeams: Array<any>;
+  // teamBracketBitch: Array<any>;
+  // theBracket: any = {};
+  
   constructor(
     public TeamService: TeamService,
     public userService: UserService,
@@ -24,18 +25,6 @@ theLoggedInUser: any = {}
     public activatedRoute: ActivatedRoute,
     public tournamentService: TournamentService,
   ) { }
-
-    addToTeam(teamToAdd, teams){
-      if(teams.indexOf(teamToAdd)%2 === 0){
-        this.firstTeam.unshift(teamToAdd);
-      }
-      else if(teams.indexOf(teamToAdd)%2 === 1){
-        this.secondTeam.unshift(teamToAdd)
-      }
-      else{
-        console.log("team does not exist")
-      }
-    }
 
     getAllTheTeams(){
       this.TeamService.getteams()
@@ -47,7 +36,6 @@ theLoggedInUser: any = {}
     console.log("listofteams=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-listofteams")
     this.checkIfLoggedIn();
     this.getAllTheTeams();
-
   }
 
 
