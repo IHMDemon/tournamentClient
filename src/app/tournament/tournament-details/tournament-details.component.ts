@@ -53,18 +53,19 @@ export class TournamentDetailsComponent implements OnInit {
 
   // return e.nativeElement.getAttribute('name') == 'txt3';
 
-  signUpThisTeam() {
-    console.log(this.theChosenTeam);
-  }
+  // signUpThisTeam(chosenTeam) {
+  
+  //   console.log(this.theChosenTeam);
+  // }
 
 
 
-  teamJoiningTournament(){ 
+  teamJoiningTournament(chosenTeam){ 
+    this.theChosenTeam = chosenTeam;
     console.log(`${this.theChosenTeam.teamName} wants to join this tournament: ${this.theActualTournament.tournamentName}`)
-    
     this.teamJoinsATournamentObjInfo.tournamentId = this.theActualTournament._id;
     this.teamJoinsATournamentObjInfo.teamId = this.theChosenTeam._id;
-    this.TournamentService.playerJoinsATournament(this.userJoinsATournamentObjInfo)
+    this.TournamentService.teamJoinsATournament(this.teamJoinsATournamentObjInfo)
     // this.tournamentService.playerJoinsATournament(playerJoinsATournamentObjInfo)
     .subscribe(
       (res) => {
