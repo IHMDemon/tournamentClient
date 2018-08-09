@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { UserService } from '../../services/user.service';
 import { TournamentService} from '../../services/tournament.service'
@@ -51,9 +51,10 @@ export class TournamentDetailsComponent implements OnInit {
 
   }
 
+  // return e.nativeElement.getAttribute('name') == 'txt3';
 
-  chooseYourTeam() {
-    
+  signUpThisTeam() {
+    console.log(this.theChosenTeam);
   }
 
 

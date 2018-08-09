@@ -28,7 +28,11 @@
 
           <h5>Choose Your Team :)</h5>         
                 <div *ngFor="let eachTeam of detailedUserInfo.teamCaptainOf">
-                   <button (click)="signUpThisTeam()">I choose {{eachTeam.teamName}}</button>
+
+                  <form (submit)="signUpThisTeam()">
+                   <input type="text" readonly name ="theChosenTeam" #theChosenTeam value={{eachTeam._id}}>
+                   <button>I choose {{eachTeam.teamName}}</button>
+                  </form>
                 </div>
 
 
