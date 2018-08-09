@@ -19,11 +19,11 @@ export class TournamentDetailsComponent implements OnInit {
   theActualTournament: any = {}
   userJoinsATournamentObjInfo: any = {}
 
-  constructor(public TournamentService: TournamentService,
+  constructor(
     public userService: UserService,
     public activatedRoute: ActivatedRoute,
     public router: Router,
-    public tournamentService: TournamentService,
+    public TournamentService: TournamentService,
     public teamService: TeamService
   
   ) { }
@@ -36,7 +36,17 @@ export class TournamentDetailsComponent implements OnInit {
     
     this.userJoinsATournamentObjInfo.tournamentId = this.theActualTournament._id;
     this.userJoinsATournamentObjInfo.playerId = this.theLoggedInUser._id;
-    this.tournamentService.playerJoinsATournament(playerJoinsATournamentObjInfo);
+    this.TournamentService.playerJoinsATournament(this.userJoinsATournamentObjInfo)
+    // this.tournamentService.playerJoinsATournament(playerJoinsATournamentObjInfo)
+    .subscribe(
+      (res) => {
+        console.log('Player successfully added to team');
+        this.router.navigate(['/users/mytournaments']); //you need to add this later.
+        //redirect with a popup message: You have successfully signed up for tournament.name, blah blah blah.
+
+      },
+      (err) => { err }
+    )
 
   }
 
