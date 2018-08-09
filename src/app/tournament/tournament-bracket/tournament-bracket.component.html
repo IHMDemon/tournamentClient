@@ -1,11 +1,10 @@
 <button (click) = "assignAllTeamsToBracket()">ASSIGN TEAMS TO BRACKET</button>
 
 <div class = "container">
-	<div *ngFor = "let team of this.theBracket" class = "first team">
-		{{team.firstTeam.teamCaptain|json}}
-		
+	<div *ngFor = "let team of this.theBracket" class = "team">
+		<img src = {{team.firstTeam.teamLogo}} class ="team-logo">
 		<img src = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Versus_sign.png" class = "versus">
-		{{team.secondTeam.teamCaptain|json}}
+		<img src = {{team.secondTeam.teamLogo}} class ="team-logo">
 	</div>
 
 	
