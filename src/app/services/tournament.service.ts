@@ -21,6 +21,19 @@ export class TournamentService {
      return Observable.throw(e.json().message);
   }
 
+
+  getAllTheTournaments(){
+    return this.myhttp.get(`${this.baseUrl}/api/tournament/alltournaments`)
+    .map((res)=> res.json())
+  }
+
+  getJustOneTournament(theIdOfTheTournament){
+    return this.myhttp.get(`${this.baseUrl}/api/tournament/details/${theIdOfTheTournament}`)
+    .map((res)=> res.json());
+  }
+  
+
+
   createTournament(theTournament) {
     console.log("tournament created: =============>",theTournament)
     return this.myhttp.post(`${this.baseUrl}/api/tournament/create`, theTournament, {withCredentials: true})

@@ -4,6 +4,7 @@ import { TeamService } from '../../services/team.service';
 import { TournamentService } from '../../services/tournament.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router, Route} from '@angular/router';
+
 @Component({
   selector: 'app-all-teams',
   templateUrl: './all-teams.component.html',

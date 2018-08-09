@@ -21,6 +21,8 @@ import { TeamEditformComponent } from './teams/team-editform/team-editform.compo
 import { AllTeamsComponent } from './teams/all-teams/all-teams.component';
 import { TeamsComponent } from './teams/teams.component';
 import { JoinTeamComponent } from './teams/join-team/join-team.component';
+import { AllTournamentsComponent } from './tournament/all-tournaments/all-tournaments.component';
+import { TournamentDetailsComponent } from './tournament/tournament-details/tournament-details.component';
 
 const routes: Routes = [
   { path: 'home',
@@ -56,6 +58,14 @@ const routes: Routes = [
   { path: 'tournament/create', 
     component: TournamentCreateComponent 
   },
+  { path: 'alltournaments', 
+    component: AllTournamentsComponent 
+  },
+  {
+    path:'tournament/:id',
+    component: TournamentDetailsComponent
+  },
+
 
   { path: '', 
     redirectTo: '/',
@@ -87,6 +97,8 @@ const routes: Routes = [
     AllTeamsComponent,
     TeamsComponent,
     JoinTeamComponent,
+    AllTournamentsComponent,
+    TournamentDetailsComponent,
 
   ],
   imports: [
