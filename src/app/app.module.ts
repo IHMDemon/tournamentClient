@@ -21,8 +21,12 @@ import { TeamEditformComponent } from './teams/team-editform/team-editform.compo
 import { AllTeamsComponent } from './teams/all-teams/all-teams.component';
 import { TeamsComponent } from './teams/teams.component';
 import { JoinTeamComponent } from './teams/join-team/join-team.component';
-
+import { TweenMeComponent } from './tween-me/tween-me.component';
+import 'gsap';
 const routes: Routes = [
+  {path: 'tweenme',
+    component: TweenMeComponent
+  },
   { path: 'home',
   // redirectTo: '/',will test you later.
   // pathMatch: 'full'
@@ -87,6 +91,7 @@ const routes: Routes = [
     AllTeamsComponent,
     TeamsComponent,
     JoinTeamComponent,
+    TweenMeComponent,
 
   ],
   imports: [
