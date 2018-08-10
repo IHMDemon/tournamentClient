@@ -110,7 +110,15 @@ export class TournamentDetailsComponent implements OnInit {
         )
     }
   
+    updateThisTournament(){
+      const theId = this.theActualTournament._id;
+      console.log(theId);
 
+      this.TournamentService.updateTournament(theId, this.theActualTournament)
+      .subscribe((res)=>{
+        this.router.navigate(['alltournaments'])
+      })
+    }
 
 
   ngOnInit() {
