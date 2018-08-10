@@ -1,3 +1,4 @@
+<div class="container center">
 <hr>
 <div>
   <label for  = "team-title">Team name: </label>
@@ -13,7 +14,7 @@
 <br>
 <div>
   <label for  = "team-description">Team Logo: </label>
-  <img [src] = "newTeam.teamLogo"  alt = "insert img url.">
+  <input type = "text" [(ngModel)] = "newTeam.image" name = "terp" placeholder = "insert image URL">
 </div>
 <div>
   <label for  = "team-type">Team roster: </label>
@@ -25,3 +26,4 @@
 <button (click)="addNewTeam()">Submit New Team</button>
 <br>
 <br>
+</div>
