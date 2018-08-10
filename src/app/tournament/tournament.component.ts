@@ -9,6 +9,7 @@ export class TournamentComponent implements OnInit {
 
   constructor() { }
 
+  theLoggedInUser:any = {}
   ngOnInit() {
   }
 

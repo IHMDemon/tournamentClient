@@ -11,60 +11,47 @@ img {
 
   
   
+.firstteam{
+position: relative;
+left: 50px;
 }
 
-/*
- *  Flex Layout Specifics
-*/
-/* main{
-  display:flex;
-  flex-direction:row;
-}
-.round{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  width:200px;
-  list-style:none;
-  padding:0;
-}
-  .round .spacer{ flex-grow:1; }
-  .round .spacer:first-child,
-  .round .spacer:last-child{ flex-grow:.5; }
-
-  .round .game-spacer{
-    flex-grow:1;
-  } */
-
-/*
- *  General Styles
-*/
-/* body{
-  font-family:sans-serif;
-  font-size:small;
-  padding:10px;
-  line-height:1.4em;
+.secondteam{
+position: relative;
+right: 50px;
 }
 
-li.game{
-  padding-left:20px;
+.versus {
+  width: 150px;
+  height: 150px;
+  float: center;
+  z-index: 2;
 }
 
-  li.game.winner{
-    font-weight:bold;
-  }
-  li.game span{
-    float:right;
-    margin-right:5px;
-  }
+.team-logo{
+  width: 100%;
+  /* width: 240px; */
+  height: 380px;
+}
 
-  li.game-top{ border-bottom:1px solid #aaa; }
+.team{
+  display: flex;
+  align-items: center;
+  /* flex-flow: row wrap; */
+  margin: 10px 0;
+}
 
-  li.game-spacer{ 
-    border-right:1px solid #aaa;
-    min-height:40px;
-  }
+.container{
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;}
 
-  li.game-bottom{ 
-    border-top:1px solid #aaa;
-  } */
+.team-name{
+  /* float: center; */
+  /* margin: 0;
+  padding: 0; */
+  z-index: 2;
+  /* position: relative;
+  left: 100px; */
+}
+ 
