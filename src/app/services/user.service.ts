@@ -61,6 +61,17 @@ export class UserService {
   }
 
 
+  checkIfLoggedIn2() {
+    return this.myhttp.get(`${this.baseUrl}/api/loggedin`, {withCredentials: true})
+    .map((res)=> {
+      res.json();
+      return JSON.parse((<any>res)._body);
+    })
+
+    .catch(this.handleError);
+  }
+
+
   getJustOneUser(theIdOfTheUser){
     return this.myhttp.get(`${this.baseUrl}/api/profile/${theIdOfTheUser}`)
     .map((res)=> res.json());
