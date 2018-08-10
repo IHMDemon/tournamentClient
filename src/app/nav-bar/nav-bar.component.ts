@@ -73,6 +73,7 @@ logMeOut() {
 
 
 ngOnInit() {
+  this.checkIfLoggedIn();
 }
 
 
