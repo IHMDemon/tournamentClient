@@ -18,8 +18,10 @@
 <br>
 <p>LOSER BRACKET: </p>
 
-<div *ngFor = "let team of this.theBracket" class = "container-loser">
+<div *ngFor = "let team of this.teamBracket" class = "container-loser">
 	<div *ngIf="team.firstTeam.lose == true">
+			<!-- <div [ngStyle]="{'background-color': 'blue', 'border': 2px solid orange }">	something		</div> -->
+
 			<input type="image" [src] = "team.firstTeam.teamLogo" name="saveForm" class="" id="saveForm" routerLink = "/team/{{team.firstTeam._id}}">
 		</div>
 	<div *ngIf="team.secondTeam.lose == true">
