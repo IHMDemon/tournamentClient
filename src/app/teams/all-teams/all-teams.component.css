@@ -1,8 +1,28 @@
+body{
+  margin: 0 auto;
+}
 .allTeams{
-  padding: 0 20px;
+  
   text-align: center;
-  border: 1px solid black;
-  width: 200px;
-  height: 100px;
+  /* border: 0px solid black; */
+  margin: 0 auto;
+  font-family:'Roboto Condensed', sans-serif;
 
+ 
+
+
+}
+.a{
+  color:rgb(229, 6, 36);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2em;
+}
+.logo{
+  position: relative;
+}
+
+
+.space{
+  justify-content: space-around;
 }

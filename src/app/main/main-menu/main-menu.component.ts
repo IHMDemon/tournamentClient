@@ -51,7 +51,7 @@ export class MainMenuComponent implements OnInit {
 
   ngOnInit() {
     this.checkIfLoggedIn();
-    TweenMax.to(".first", 2, { ease:Bounce.easeOut});
+    TweenMax.to(".first", 2, {x:0, ease:Bounce.easeOut});
   }
 
 }
