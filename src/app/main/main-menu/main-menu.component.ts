@@ -4,6 +4,8 @@ import {ActivatedRoute} from '@angular/router';
 import {Router, Route} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {errorObject} from 'rxjs/internal-compatibility';
+import {environment} from '../../../environments/environment'
+
 // import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable, TweenLite, SplitText } from "gsap/all";
 // import { TweenMax, ease, Bounce,Back,TimelineLite, easeOut} from "gsap/TweenMax";
 // import 'gsap';
@@ -15,6 +17,7 @@ import {errorObject} from 'rxjs/internal-compatibility';
 })
 export class MainMenuComponent implements OnInit {
 
+  baseUrl: any = environment.url_base;
   theLoggedInUser: any = {}
   theError: any;
 
