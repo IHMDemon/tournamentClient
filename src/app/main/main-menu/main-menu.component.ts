@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {errorObject} from 'rxjs/internal-compatibility';
 import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable, TweenLite, SplitText } from "gsap/all";
 import { TweenMax, ease, Bounce,Back,TimelineLite, easeOut} from "gsap/TweenMax";
-import 'gsap';
+// import 'gsap';
 
 @Component({
   selector: 'app-main-menu',
