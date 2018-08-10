@@ -53,8 +53,8 @@ export class UserService {
     return this.myhttp.get(`${this.baseUrl}/api/loggedin`, {withCredentials: true})
     .map((res)=> {
       res.json();
+      this.tellNavToCheckLogin(res);
       return JSON.parse((<any>res)._body);
-
     })
 
     .catch(this.handleError);

@@ -24,11 +24,12 @@ import { JoinTeamComponent } from './teams/join-team/join-team.component';
 import { AllTournamentsComponent } from './tournament/all-tournaments/all-tournaments.component';
 import { TournamentDetailsComponent } from './tournament/tournament-details/tournament-details.component';
 import { TweenMeComponent } from './tween-me/tween-me.component';
-import 'gsap';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+// import 'gsap';
 const routes: Routes = [
-  {path: 'tweenme',
-    component: TweenMeComponent
-  },
+  // {path: 'tweenme',
+  //   component: TweenMeComponent
+  // },
   { path: 'home',
   // redirectTo: '/',will test you later.
   // pathMatch: 'full'
@@ -57,9 +58,9 @@ const routes: Routes = [
     path:'tournament/details/:id',
     component: TournamentDetailsComponent
   },
-  { path: 'tournament', 
-    component: TournamentComponent 
-  },
+  // { path: 'tournament', 
+  //   component: TournamentComponent 
+  // },
   { path: 'tournament/teamlist',  
     component: TeamCreationComponent 
   },
@@ -83,8 +84,7 @@ const routes: Routes = [
   },
 
   { path: '', 
-    redirectTo: '/',
-    pathMatch: 'full'
+    component: LandingpageComponent
   },
   { path: '**', 
     redirectTo: '/',
@@ -115,6 +115,7 @@ const routes: Routes = [
     AllTournamentsComponent,
     TournamentDetailsComponent,
     TweenMeComponent,
+    LandingpageComponent,
  
 
   ],
