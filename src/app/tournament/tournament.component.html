@@ -1,6 +1,11 @@
-<h3>YOU REACHED THE TOURNAMENT MAIN PAGE</h3>
-  <p>It's tournament time! Check out all the tournaments!</p>
-<hr>
+<div class="container-fluid  allTeams">
+
+    <h3>YOU REACHED THE TOURNAMENT MAIN PAGE</h3>
+    <p>It's tournament time! Check out all the tournaments!</p>
+    <hr>
+    
+    
+<div >
 <div *ngIf="theLoggedInUser !== undefined">
     <p>Hi {{theLoggedInUser.username}},</p>
     <a routerLink="/team/creation">Click here to make a team</a>
@@ -14,14 +19,21 @@
         <a routerLink="/login">Click here to login</a>
         <hr>
     </div>
-<hr>
+</div>
+<div class="row">
+<div class="col-lg-3 allTeams">
+
 <!-- THIS SHOULD HOLD ALL THE TOURNAMENTS  -->
 <!-- ONCE WE ARE DONE MAKING ONE TOURNAMENT FUNCTION PROPERLY -->
 
-<div class = "left">
 <app-all-teams></app-all-teams>
 </div>
+<div class="col-lg-4 allTeams">
 <app-tournament-bracket></app-tournament-bracket>
+
+</div>
+</div>
+
 
 <!-- <div class = "right">
 </div> -->

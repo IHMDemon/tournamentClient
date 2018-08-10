@@ -6,7 +6,7 @@
 .container {
   display:flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .link-text{
@@ -19,6 +19,9 @@
 
 .welcome-page{
   text-align: center;
+}
+.red{
+  color:rgb(229, 6, 36)
 }
 
 .white{

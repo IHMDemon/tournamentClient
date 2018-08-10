@@ -2,3 +2,25 @@
 float: left;
 }
 
+.allTeams{
+    align-content: center;
+    text-align: center;
+    /* border: 0px solid black; */
+    margin: 0 auto;
+    font-family:'Roboto Condensed', sans-serif;
+  
+   
+  
+  
+  }
+  .allTeams2{
+    justify-content: space-evenly;
+    
+    /* border: 0px solid black; */
+    margin: 0 auto;
+    font-family:'Roboto Condensed', sans-serif;
+  
+   
+  
+  
+  }
