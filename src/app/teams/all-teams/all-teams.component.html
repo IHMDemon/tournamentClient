@@ -1,46 +1,67 @@
-<h3>
-    ALL TEAMS</h3>
-<h5>Which team are you rooting for? Check them out below!</h5>
-<hr>
-<div *ngIf="theLoggedInUser !== undefined ">
-    <p>Hi {{theLoggedInUser.username}},</p>
-    <a routerLink="/team/creation">Click here to make a team</a>
-    <hr>
-</div>
-
-<div *ngIf="theLoggedInUser === undefined">
-    <p>Want to make a team?</p>
-    <a routerLink="/signup">Click here to sign up</a>
+<div class="container allTeams">
+       
+    <div class="col-lg-12">
+    <img class="logo" src="http://localhost:3000/Images/at.svg" alt="">
     <br>
-    <a routerLink="/login">Click here to login</a>
-    <hr>
+    <br>
+    <br>
+    <br>
+    <h3>Which team are you rooting for? Check them out below!</h3>
+
+    <div *ngIf="theLoggedInUser !== undefined ">
+
+        <h2>Hi {{theLoggedInUser.username}},</h2>
+        <a routerLink="/team/creation">Click here to make a team</a>
+
+    </div>
+
+    <div *ngIf="theLoggedInUser === undefined">
+        <h3>Want to make a team?</h3>
+        <a routerLink="/signup">Click here to sign up</a>
+        <br>
+        <a routerLink="/login">Click here to login</a>
+
+    </div>
+    <br>
+    <br>
+    <div class="row space">
+        <div class="space" *ngFor="let team of allTheTeams">
+            <div class="card  " style="width: 18rem;">
+                <img class="card-img-top" src="{{team.teamLogo}}" alt="Card image cap">
+                <h4>Team Name:
+                    <br> {{team.teamName}}</h4>
+                <!-- THIS IS THE PROPER WAY TO ROUTERLINK -->
+                <a class="a " [routerLink]="['/team', team._id]">Team details.</a>
+                <br>
+              
+
+                <!-- <p>Roster: <br>{{team.roster}}      </p>
+<p>description: <br>{{team.description}}</p>
+<p>logo:        <br>{{team.teamLogo}}        </p> -->
+                <!-- <button (click) = "addToTeam(team,allTheTeams)">Add</button>
+<button (click) = "deleteTeam(team._id)">Delete</button>
+<button (click) = "editTeam(team._id)">Edit</button> -->
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <!-- DO NOT DELETE THIS PLEASE                                  -->
+    <!-- THIS IS THE PROPER WAY TO ROUTERLINK                       -->
+    <!-- <a [routerLink] = "['/team', team._id]">Team details.</a>  -->
+    <!-- <div *ngFor="let team of allTheTeams"> -->
+    <!--     <h6>Team Name:{{team.teamName}}</h6> -->
+    <!-- THIS IS THE PROPER WAY TO ROUTERLINK -->
+    <!--     <a [routerLink]="['/team', team._id]">Team details.</a> -->
+    <!-- <p>Roster:        <br>{{team.roster}}      </p>
+<p>description: <br>{{team.description}}</p>
+<p>logo:        <br>{{team.teamLogo}}        </p> -->
+    <!--     <button (click)="addTeam(team)">Add</button> -->
+    <!--     <button (click)="deleteTeam(team._id)">Delete</button> -->
+    <!--     <button (click)="updateTeam(team._id)">Edit</button> -->
+    <!-- DO NOT DELETE THIS PLEASE                                  -->
+    <!-- THIS IS THE PROPER WAY TO ROUTERLINK                       -->
+    <!-- <a [routerLink] = "['/team', team._id]">Team details.</a>  -->
 </div>
 
-<div *ngFor = "let team of allTheTeams">
-<h6>Team Name:{{team.teamName}}</h6>    <!-- THIS IS THE PROPER WAY TO ROUTERLINK -->
-    <a [routerLink] = "['/team', team._id]">Team details.</a>
-<br>
-<hr>
-<!-- <p>Roster: <br>{{team.roster}}      </p>
-<p>description: <br>{{team.description}}</p>
-<p>logo:        <br>{{team.teamLogo}}        </p> -->
-<button (click) = "addToTeam(team,allTheTeams)">Add</button>
-<button (click) = "deleteTeam(team._id)">Delete</button>
-<button (click) = "editTeam(team._id)">Edit</button>
 </div>
-<!-- DO NOT DELETE THIS PLEASE                                  -->
-<!-- THIS IS THE PROPER WAY TO ROUTERLINK                       -->
-<!-- <a [routerLink] = "['/team', team._id]">Team details.</a>  -->
-<!-- <div *ngFor="let team of allTheTeams"> -->
-<!--     <h6>Team Name:{{team.teamName}}</h6> -->
-<!-- THIS IS THE PROPER WAY TO ROUTERLINK -->
-<!--     <a [routerLink]="['/team', team._id]">Team details.</a> -->
-<!-- <p>Roster:        <br>{{team.roster}}      </p>
-<p>description: <br>{{team.description}}</p>
-<p>logo:        <br>{{team.teamLogo}}        </p> -->
-<!--     <button (click)="addTeam(team)">Add</button> -->
-<!--     <button (click)="deleteTeam(team._id)">Delete</button> -->
-<!--     <button (click)="updateTeam(team._id)">Edit</button> -->
-<!-- DO NOT DELETE THIS PLEASE                                  -->
-<!-- THIS IS THE PROPER WAY TO ROUTERLINK                       -->
-<!-- <a [routerLink] = "['/team', team._id]">Team details.</a>  -->

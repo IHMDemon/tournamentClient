@@ -1,55 +1,58 @@
-
 <div *ngIf="theLoggedInUser !== undefined">
-    <header class ="welcome-page">Welcome, {{theLoggedInUser.username|json}}</header>
+    <header class="welcome-page">Welcome, {{theLoggedInUser.username|json}}</header>
     <br>
     <br>
     <!-- ['/team', teamId, 'user', userName, {details: true}] -->
     <!-- For instance ['/team', teamId, 'user', userName, {details: true}]  -->
     <!-- means that we want to generate a link to /team/11/user/bob;details=true. -->
 
-    <div class = "container">
+    <div class="container">
 
-                <div>
-                    <input type="image" src="http://localhost:3000/Images/homebutton1.svg" name="saveForm" class="btn-images" id="saveForm" routerLink = "/tournament/create">
-                    <p  class = "link-text">CREATE TOURNAMENT</p> 
-                </div>
+        <div>
+            <input type="image" src="http://localhost:3000/Images/ct2.svg" name="saveForm" class="btn-images first" id="saveForm" routerLink="/tournament/create">
+           
+        </div>
 
-                
-                <div>
-                    <input type="image" src="http://i2.wp.com/www.stephenosoko.com/wp-content/uploads/2015/12/create-logo_img_2834651b.jpg?w=620" name="saveForm" class="btn-images" id="saveForm" routerLink = "/team/creation/">
-                    <p  class = " link-text">CREATE TEAM</p>  
-                </div>
 
-                <div>
-                    <input type="image" src="http://tradeshowinfotainer.com/wp-content/uploads/2012/06/crowd-of-people1-1080x675.jpg" name="saveForm" class="btn-images" id="saveForm" routerLink = "/team/list">
-                    <p class = "  link-text">JOIN TEAM</p>
-                </div>
-
-                <div>
-                    <input type="image" src="http://sticknodes.com/thumbs/thumb_tournamentsetup.png" name="saveForm" class="btn-images" id="saveForm" routerLink = "/tournament">
-                    <p class = " link-text">JOIN TOURNAMENT</p>
-                </div>                                                                  
-
-    </div>  <!-- END container -->
-                
+        <div>
+            <input type="image" src="http://localhost:3000/Images/hb1.svg"
+                name="saveForm" class="btn-images" id="saveForm" routerLink="/team/creation/">
          
-</div> <!-- End main menu for LOGGED IN USERS -->
+        </div>
+        <div class="pad">
+            <input type="image" src="http://tradeshowinfotainer.com/wp-content/uploads/2012/06/crowd-of-people1-1080x675.jpg" name="saveForm"
+                class="btn-images" id="saveForm" routerLink="/team/list">
+            <p class="  link-text">JOIN TEAM</p>
+        </div>
+
+        <div class="pad" >
+            <input type="image" src="http://sticknodes.com/thumbs/thumb_tournamentsetup.png" name="saveForm" class="btn-images" id="saveForm"
+                routerLink="/tournament">
+            <p class=" link-text">JOIN TOURNAMENT</p>
+        </div>
+
+    </div>
+    <!-- END container -->
+
+
+</div>
+<!-- End main menu for LOGGED IN USERS -->
 
 
 <div *ngIf="theLoggedInUser === undefined">
-     <h2> Hi there, spectator</h2>
+    <h2> Hi there, spectator</h2>
 
-     <p> Feel free to check out all the tournaments, teams, and players involved!</p>
-     <p> If you want to make your own tournament/team,<a routerLink="/signup">sign up here</a>
-     </p>
+    <p> Feel free to check out all the tournaments, teams, and players involved!</p>
+    <p> If you want to make your own tournament/team,
+        <a routerLink="/signup">sign up here</a>
+    </p>
     <br>
     <hr>
-    </div>
-    
+</div>
+
 
 
 
 
 <!-- THESE ARE JUST LINKS WITH EXTRA BACKEND UPDATE FEATURES -->
 <!-- EVAN CAN START DESIGNING THIS -->
-
