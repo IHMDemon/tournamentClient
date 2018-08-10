@@ -27,6 +27,14 @@ export class TournamentService {
     .map((res)=> res.json())
   }
 
+
+  getTheTournamentTeams(theTournamentId){
+    console.log('SERVICE TOURNAMENT ID',theTournamentId);
+    return this.myhttp.get(`${this.baseUrl}/api/team/tournamentTeams/${theTournamentId}`)
+    .map((res)=> res.json())
+  }
+
+
   getJustOneTournament(theIdOfTheTournament){
     return this.myhttp.get(`${this.baseUrl}/api/tournament/details/${theIdOfTheTournament}`)
     .map((res)=> res.json());

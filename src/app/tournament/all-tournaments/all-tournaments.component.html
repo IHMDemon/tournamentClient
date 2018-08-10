@@ -4,7 +4,9 @@
 
 <div *ngFor="let eachTournament of allTheTournaments">
   <h6>Tournament Name: {{eachTournament.tournamentName}}</h6>
-  <a [routerLink] = "['/tournament', eachTournament._id]">Tournament details.</a>
+  <p><a [routerLink] = "['/tournament/details', eachTournament._id]">Tournament details.</a></p>
+  <p><a [routerLink] = "['/tournament/', eachTournament._id]">See The Match Lineup</a></p>
+
  
 
 

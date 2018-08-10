@@ -1,3 +1,9 @@
+
+<div *ngFor="let eachTeam of theTournamentTeams">
+	TeamName: {{eachTeam.teamName}}
+</div>
+
+
 <!-- <div [style.visibility]="(assignAllTeamsToBracket == 0) ? 'hidden' : 'visible' "> -->
 		<button (click) = "assignAllTeamsToBracket()">ADVANCE TO NEXT ROUND</button>
 	<!-- </div> -->
