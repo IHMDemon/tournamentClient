@@ -57,9 +57,9 @@ const routes: Routes = [
     path:'tournament/details/:id',
     component: TournamentDetailsComponent
   },
-  { path: 'tournament', 
-    component: TournamentComponent 
-  },
+  // { path: 'tournament', 
+  //   component: TournamentComponent 
+  // },
   { path: 'tournament/teamlist',  
     component: TeamCreationComponent 
   },

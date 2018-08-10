@@ -31,7 +31,7 @@ export class TweenMeComponent implements OnInit {
     }
   ngOnInit() {
     this.getAllTheTeams();
-    TweenMax.to(".logo", 4, {x:'30%', ease:Bounce.easeOut});
+    // TweenMax.to(".logo", 4, {x:'30%', ease:Bounce.easeOut});
 
     
    
