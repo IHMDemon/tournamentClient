@@ -70,8 +70,7 @@ export class TournamentDetailsComponent implements OnInit {
     .subscribe(
       (res) => {
         console.log('Player successfully added to team');
-        this.router.navigate(['/users/mytournaments']); //you need to add this later.
-        //redirect with a popup message: You have successfully signed up for tournament.name, blah blah blah.
+        this.router.navigate(['alltournaments'])        //redirect with a popup message: You have successfully signed up for tournament.name, blah blah blah.
 
       },
       (err) => { err }
@@ -121,7 +120,7 @@ export class TournamentDetailsComponent implements OnInit {
       this.TournamentService.getJustOneTournament(params['id'])
       .subscribe((theTournamentThatWeGetFromTournamentService)=>{
         this.theActualTournament = theTournamentThatWeGetFromTournamentService;
-        console.log(this.theActualTournament);
+        console.log('TOURNAMENT',this.theActualTournament);
 
 
     this.userService.getJustOneUser(this.theLoggedInUser._id)

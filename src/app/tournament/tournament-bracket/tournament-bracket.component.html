@@ -1,11 +1,11 @@
 
-<div *ngFor="let eachTeam of theTournamentTeams">
+<!-- <div *ngFor="let eachTeam of theTournamentTeams">
 	TeamName: {{eachTeam.teamName}}
-</div>
+</div> -->
 
 
 <!-- <div [style.visibility]="(assignAllTeamsToBracket == 0) ? 'hidden' : 'visible' "> -->
-		<button (click) = "assignAllTeamsToBracket()">ADVANCE TO NEXT ROUND</button>
+		<!-- <button (click) = "assignAllTeamsToBracket()">ADVANCE TO NEXT ROUND</button> -->
 	<!-- </div> -->
 
 <div class = "container">
@@ -15,7 +15,7 @@
 	<input type="image" [src] = "team.secondTeam.teamLogo" name="saveForm" class="btn-images team-logo secondteam" id="saveForm" routerLink = "/team/{{team.secondTeam._id}}">
 </div>
 
-<br>
+<!-- <br> -->
 <!-- <p>LOSER BRACKET: </p>
 
 <div *ngFor = "let team of this.teamBracket" class = "container-loser">
