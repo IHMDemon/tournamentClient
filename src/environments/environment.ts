@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // BUILD UP THIS OBJECT
+  url_base: "http://localhost:3000", //YOU NEED THIS FOR FRONTEND TO WORK WITH BACKEND WHEN DEPLOYED. make sure both are consistent. If there is a slash on the end on one, the other one better too.
+
+
 };
 
 /*

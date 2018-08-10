@@ -1,132 +1,41 @@
+<!-- <div [style.visibility]="(assignAllTeamsToBracket == 0) ? 'hidden' : 'visible' "> -->
+		<button (click) = "assignAllTeamsToBracket()">ADVANCE TO NEXT ROUND</button>
+	<!-- </div> -->
+
 <div class = "container">
-	<app-team-profile></app-team-profile>
-	<img src = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Versus_sign.png">
-	<app-team-profile></app-team-profile>
+	<div *ngFor = "let team of this.theBracket" class = "team">
+	<input type="image" [src] = "team.firstTeam.teamLogo" name="saveForm" class="btn-images team-logo firstteam" id="saveForm" routerLink = "/team/{{team.firstTeam._id}}">
+	<img src = "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Versus_logo.svg/1082px-Versus_logo.svg.png" class = "versus">
+	<input type="image" [src] = "team.secondTeam.teamLogo" name="saveForm" class="btn-images team-logo secondteam" id="saveForm" routerLink = "/team/{{team.secondTeam._id}}">
 </div>
 
+<br>
+<p>LOSER BRACKET: </p>
+
+<div *ngFor = "let team of this.theBracket" class = "container-loser">
+	<div *ngIf="team.firstTeam.lose == true">
+			<input type="image" [src] = "team.firstTeam.teamLogo" name="saveForm" class="" id="saveForm" routerLink = "/team/{{team.firstTeam._id}}">
+		</div>
+	<div *ngIf="team.secondTeam.lose == true">
+			<input type="image" [src] = "team.secondTeam.teamLogo" name="saveForm" class="" id="saveForm" routerLink = "/team/{{team.secondTeam._id}}">
+
+	</div>
+</div>
+ 
+<!-- LOSE CONDITION ::: ==============> team.firstTeam.lose -->
+		<!-- <img src = {{team.firstTeam.teamLogo}} class ="team-logo">
+		<img src = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Versus_sign.png" class = "versus">
+		<img src = {{team.secondTeam.teamLogo}} class ="team-logo"> -->
 
 
+	<!-- <div>
+			<input type="image" [src] = "team.firstTeam.teamLogo" name="saveForm" class="btn-images" id="saveForm" routerLink = "/team/{{team.firstTeam._id}}">
+			<p class = "link-text">CREATE TOURNAMENT</p> 
+	</div> -->
 
 
+	<!-- <ion-list ion-item *ngFor="let item of singleArray;"  >
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- THIS WOULD HOLD AN ACTUAL TOURNAMENT WITH ALL THE -->
-<!-- COMPLICATED SHIT THAT WE WANT TO PUT IN -->
-<!-- BUNCH OF TEAM PROFILES -->
-<!-- BUNDLED UP TOGETHER -->
-<!-- 
-<h1>2013 NCAA Tournament - Midwest Bracket</h1>
-<main id="tournament">
-	<ul class="round round-1">
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top winner">Make this dynamic <span>79</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom ">NC A&T <span>48</span></li>
-
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top winner">Colo St <span>84</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom ">Missouri <span>72</span></li>
-
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top ">Oklahoma St <span>55</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom winner">Oregon <span>68</span></li>
-
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top winner">Saint Louis <span>64</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom ">New Mexico St <span>44</span></li>
-
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top winner">Memphis <span>54</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom ">St Mary's <span>52</span></li>
-
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top winner">Mich St <span>65</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom ">Valparaiso <span>54</span></li>
-
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top winner">Creighton <span>67</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom ">Cincinnati <span>63</span></li>
-
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top winner">Duke <span>73</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom ">Albany <span>61</span></li>
-
-		<li class="spacer">&nbsp;</li>
-	</ul>
-	<ul class="round round-2">
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top winner">Lousville <span>82</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom ">Colo St <span>56</span></li>
-
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top winner">Oregon <span>74</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom ">Saint Louis <span>57</span></li>
-
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top ">Memphis <span>48</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom winner">Mich St <span>70</span></li>
-
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top ">Creighton <span>50</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom winner">Duke <span>66</span></li>
-
-		<li class="spacer">&nbsp;</li>
-	</ul>
-	<ul class="round round-3">
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top winner">Lousville <span>77</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom ">Oregon <span>69</span></li>
-
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top ">Mich St <span>61</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom winner">Duke <span>71</span></li>
-
-		<li class="spacer">&nbsp;</li>
-	</ul>
-	<ul class="round round-4">
-		<li class="spacer">&nbsp;</li>
-		
-		<li class="game game-top winner">Lousville <span>85</span></li>
-		<li class="game game-spacer">&nbsp;</li>
-		<li class="game game-bottom ">Duke <span>63</span></li>
-		
-		<li class="spacer">&nbsp;</li>
-	</ul>		 -->
+		{{item.bil}} <button round>{{item.stat}}</button>
+	
+	</ion-list> -->

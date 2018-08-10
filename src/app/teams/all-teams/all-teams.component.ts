@@ -7,6 +7,7 @@ import { Router, Route} from '@angular/router';
 import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable, TweenLite, SplitText } from "gsap/all";
 import { TweenMax, ease, Bounce,Back,TimelineLite, easeOut} from "gsap/TweenMax";
 import 'gsap';
+
 @Component({
   selector: 'app-all-teams',
   templateUrl: './all-teams.component.html',
@@ -14,12 +15,12 @@ import 'gsap';
 })
 export class AllTeamsComponent implements OnInit {
 
-firstTeam:Array<any> = [];
-secondTeam:Array<any> = [];
-
-theLoggedInUser: any = {}
- theError: any;
+  theLoggedInUser: any = {}
+  theError: any;
   allTheTeams: Array<any>;
+  // teamBracketBitch: Array<any>;
+  // theBracket: any = {};
+  
   constructor(
     public TeamService: TeamService,
     public userService: UserService,
@@ -27,18 +28,6 @@ theLoggedInUser: any = {}
     public activatedRoute: ActivatedRoute,
     public tournamentService: TournamentService,
   ) { }
-
-    addToTeam(teamToAdd, teams){
-      if(teams.indexOf(teamToAdd)%2 === 0){
-        this.firstTeam.unshift(teamToAdd);
-      }
-      else if(teams.indexOf(teamToAdd)%2 === 1){
-        this.secondTeam.unshift(teamToAdd)
-      }
-      else{
-        console.log("team does not exist")
-      }
-    }
 
     getAllTheTeams(){
       this.TeamService.getteams()
@@ -51,7 +40,6 @@ theLoggedInUser: any = {}
     this.checkIfLoggedIn();
     this.getAllTheTeams();
     TweenMax.to(".logo", 3, {rotation: 360, ease:Bounce.easeOut});
-
   }
 
 
