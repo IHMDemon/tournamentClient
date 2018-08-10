@@ -21,6 +21,8 @@ import { TeamEditformComponent } from './teams/team-editform/team-editform.compo
 import { AllTeamsComponent } from './teams/all-teams/all-teams.component';
 import { TeamsComponent } from './teams/teams.component';
 import { JoinTeamComponent } from './teams/join-team/join-team.component';
+import { AllTournamentsComponent } from './tournament/all-tournaments/all-tournaments.component';
+import { TournamentDetailsComponent } from './tournament/tournament-details/tournament-details.component';
 import { TweenMeComponent } from './tween-me/tween-me.component';
 import 'gsap';
 const routes: Routes = [
@@ -60,6 +62,18 @@ const routes: Routes = [
   { path: 'tournament/create', 
     component: TournamentCreateComponent 
   },
+  { path: 'alltournaments', 
+    component: AllTournamentsComponent 
+  },
+  {
+    path:'tournament/:id',
+    component: TournamentDetailsComponent
+  },
+
+  {
+    path:'user/:id',
+    component: UserProfileComponent
+  },
 
   { path: '', 
     redirectTo: '/',
@@ -91,7 +105,10 @@ const routes: Routes = [
     AllTeamsComponent,
     TeamsComponent,
     JoinTeamComponent,
+    AllTournamentsComponent,
+    TournamentDetailsComponent,
     TweenMeComponent,
+ 
 
   ],
   imports: [
