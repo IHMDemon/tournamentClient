@@ -4,6 +4,9 @@ import { TeamService } from '../../services/team.service';
 import { TournamentService } from '../../services/tournament.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router, Route} from '@angular/router';
+import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable, TweenLite, SplitText } from "gsap/all";
+import { TweenMax, ease, Bounce,Back,TimelineLite, easeOut} from "gsap/TweenMax";
+import 'gsap';
 
 @Component({
   selector: 'app-all-teams',
@@ -36,6 +39,7 @@ export class AllTeamsComponent implements OnInit {
     console.log("listofteams=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-listofteams")
     this.checkIfLoggedIn();
     this.getAllTheTeams();
+    TweenMax.to(".logo", 3, {rotation: 360, ease:Bounce.easeOut});
   }
 
 
