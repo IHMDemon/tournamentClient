@@ -11,8 +11,7 @@
 
 <br>
 <p>LOSER BRACKET: </p>
-<br>
-<br>
+
 <div *ngFor = "let team of this.theBracket" class = "container-loser">
 	<div *ngIf="team.firstTeam.lose == true">
 			<input type="image" [src] = "team.firstTeam.teamLogo" name="saveForm" class="" id="saveForm" routerLink = "/team/{{team.firstTeam._id}}">
