@@ -72,13 +72,6 @@ export class TeamProfileComponent implements OnInit {
       })
     }
 
-    deleteThisTeam(){
-      this.TeamService.deleteThisTeam(this.theActualTeam._id)
-      .subscribe((afterTheDeletingHasHappened)=>{
-        this.router.navigate(['/allteams'])
-    
-      })
-    };
 
 
 

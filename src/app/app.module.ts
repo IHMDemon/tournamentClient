@@ -23,8 +23,12 @@ import { TeamsComponent } from './teams/teams.component';
 import { JoinTeamComponent } from './teams/join-team/join-team.component';
 import { AllTournamentsComponent } from './tournament/all-tournaments/all-tournaments.component';
 import { TournamentDetailsComponent } from './tournament/tournament-details/tournament-details.component';
-
+import { TweenMeComponent } from './tween-me/tween-me.component';
+import 'gsap';
 const routes: Routes = [
+  {path: 'tweenme',
+    component: TweenMeComponent
+  },
   { path: 'home',
   // redirectTo: '/',will test you later.
   // pathMatch: 'full'
@@ -103,6 +107,8 @@ const routes: Routes = [
     JoinTeamComponent,
     AllTournamentsComponent,
     TournamentDetailsComponent,
+    TweenMeComponent,
+ 
 
   ],
   imports: [

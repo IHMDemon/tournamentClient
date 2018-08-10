@@ -1,0 +1,15 @@
+.logo {
+    position: relative;
+    
+   }
+
+.size{
+    height: 30%;
+    width: 30%;
+}
+
+#quote{
+    font-size:44px;
+    line-height:50px;
+    color:#dedede;
+  }
