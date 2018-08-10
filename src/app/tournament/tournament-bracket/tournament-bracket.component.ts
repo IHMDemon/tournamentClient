@@ -22,6 +22,7 @@ export class TournamentBracketComponent implements OnInit {
     this.teamService.getteams()
     .subscribe((res)=>{
       this.teamBracket = res;
+      console.log("WHAT YOU ARE WORKING RIGHT NOW ============", this.teamBracket);
       if(this.teamBracket.length%2 === 0){
       for(let x=0; x <= this.teamBracket.length-1;x++){
         if(x%2 === 0){
@@ -31,14 +32,13 @@ export class TournamentBracketComponent implements OnInit {
             this.firstTeam.unshift(this.teamBracket[x]);
           }
           else {console.log("I'm inside all-teams component ts");}
-      }
-      for(let y = 0; y < this.firstTeam.length; y++){
-        this.theBracket.push({
-          firstTeam: this.firstTeam[y],
-          secondTeam: this.secondTeam[y]
-        })
-        
-      }
+          }
+          for(let y = 0; y < this.firstTeam.length; y++){
+            this.theBracket.push({
+            firstTeam: this.firstTeam[y],
+            secondTeam: this.secondTeam[y]
+          })
+          }
       console.log("=>>>>>>>>>>>>>>>>",this.theBracket);
     } else if(this.teamBracket.length === 1){
       console.log("THE WINNER IS: ",this.teamBracket[0]);  
@@ -48,9 +48,17 @@ export class TournamentBracketComponent implements OnInit {
     })
   }
 
+  checkTeamList(){
+    this.teamService.getteams()
+    .subscribe((res)=>{
+      this.teamBracket = [];
+      this.teamBracket = res;
+    })
+  }
+
+  
 
   ngOnInit() {
     this.assignAllTeamsToBracket()
   }
-
 }
