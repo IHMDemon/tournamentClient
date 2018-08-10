@@ -129,8 +129,9 @@
   <div *ngIf="showMe">
     <h1 style="color:red">WARNING</h1>
     <h6>Once you delete your tournament, there is no going back. Are you sure?</h6>
-
+    <form (submit)="deleteTournament()">
     <button class="TRUE-DELETE">Destroy this Tournament</button>
+    </form>
   </div>
 </div>
 

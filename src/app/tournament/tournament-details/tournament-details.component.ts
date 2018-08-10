@@ -4,6 +4,7 @@ import { UserService } from '../../services/user.service';
 import { TournamentService} from '../../services/tournament.service'
 import { ActivatedRoute } from '@angular/router';
 import { Router, Route} from '@angular/router'
+import {FormsModule} from '@angular/forms'
 
 
 
@@ -70,7 +71,7 @@ export class TournamentDetailsComponent implements OnInit {
     .subscribe(
       (res) => {
         console.log('Player successfully added to team');
-        this.router.navigate(['alltournaments'])        //redirect with a popup message: You have successfully signed up for tournament.name, blah blah blah.
+        this.router.navigate(['/alltournaments'])        //redirect with a popup message: You have successfully signed up for tournament.name, blah blah blah.
 
       },
       (err) => { err }
@@ -120,7 +121,15 @@ export class TournamentDetailsComponent implements OnInit {
       })
     }
 
+    deleteTournament(){
 
+      const theId = this.theActualTournament._id;
+      console.log(theId);
+      this.TournamentService.deleteThisTournament(theId)
+      .subscribe((res)=>{
+        this.router.navigate(['alltournaments'])
+      })
+    }
   ngOnInit() {
     this.checkIfLoggedIn();
     this.activatedRoute.params

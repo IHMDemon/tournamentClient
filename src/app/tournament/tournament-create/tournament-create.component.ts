@@ -57,6 +57,7 @@ export class TournamentCreateComponent implements OnInit {
         // this.newTournament = {};
         this.newTournament = res;
         console.log("reached trytocreatetournament=========", this.newTournament);
+        this.router.navigate(['/alltournaments'])
         return this.newTournament;
       },
       (err)=>{err}

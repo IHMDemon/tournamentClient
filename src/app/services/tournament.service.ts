@@ -67,6 +67,11 @@ export class TournamentService {
     .map((res)=> res.json())
   }
 
+
+  deleteThisTournament(theIdOfTheTournament){
+    return this.myhttp.delete(`${this.baseUrl}/api/tournament/delete/${theIdOfTheTournament}`,{withCredentials:true })
+    .map((res)=> res.json());
+  }
   // updateTournament(theIdOfTheTournament){
   //   console.log("a tournament gets edited: ===========>", theIdOfTheTournament)
   //   return this.myhttp.post(`${this.baseUrl}/api/tournament/update/${theIdOfTheTournament}`)
