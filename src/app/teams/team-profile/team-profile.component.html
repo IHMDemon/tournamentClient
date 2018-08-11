@@ -3,7 +3,7 @@
   <br>
   <br>
   <br>
-<h3>Team "{{theActualTeam.teamName}}"</h3>
+<h3>Team sup "{{theActualTeam.teamName}}"</h3>
 <!-- BAD IMAGE SYNTAX -->
 <!-- <img src ={{theActualTeam.teamLogo}} width =200px >
 <p><b>Description:  </b>  <i>{{theActualTeam.teamDescription}}</i></p>
@@ -13,7 +13,7 @@
 <img [src] ="theActualTeam.teamLogo" width =200px >
 <p>Description: <i>{{theActualTeam.teamDescription}}</i></p>
 <p>Captain: {{theActualTeam.teamCaptain.username}}</p>
-
+<p>Team: {{theActualTeam|json}}</p>
 
 
 
