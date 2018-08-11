@@ -42,8 +42,9 @@
         <div class="space" *ngFor="let team of allTheTeams">
             <div class="card  " style="width: 18rem;">
                 <img class="card-img-top" src="{{team.teamLogo}}" alt="Card image cap">
-                <h4>Team Name:
-                    <br> {{team.teamName}}</h4>
+                <h4>Team Name:<br> {{team.teamName}} <br> {{team.teamRoster[0]}}</h4>
+
+
                 <!-- THIS IS THE PROPER WAY TO ROUTERLINK -->
                 <a class="a" [routerLink]="['/team', team._id]">Team details.</a>
                 <br>
