@@ -18,7 +18,7 @@ import { bounce } from 'ng-animate';
   styleUrls: ['./main-menu.component.css'],
   animations: [
     trigger('bounce', [transition('* => *', useAnimation(bounce, {
-      params: {timing: 0.5, delay: 0}
+      params: {timing: 0.7, delay: 0}
 
     }))])
   ]
