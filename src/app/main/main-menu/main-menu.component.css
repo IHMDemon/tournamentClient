@@ -6,7 +6,7 @@
 .container {
   display:flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .link-text{
@@ -33,4 +33,11 @@
 .pad{
   padding:12% 2%;
 
+}
+.yea{
+  
+  text-align: center;
+  /* border: 0px solid black; */
+  margin: 0 auto;
+  font-family:'Roboto Condensed', sans-serif;
 }

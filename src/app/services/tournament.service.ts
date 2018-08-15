@@ -61,11 +61,22 @@ export class TournamentService {
   }
 
 
-  updateTeam(theIdOfTheEntry){
-    console.log("a team gets edited: ===========>", theIdOfTheEntry)
-    return this.myhttp.post(`${this.baseUrl}/api/team/` + theIdOfTheEntry,{withCredentials: true})
+  updateTournament(theIdOfTheTournament, theUpdatedTournament){
+    console.log("a team gets edited: ===========>", theUpdatedTournament)
+    return this.myhttp.post(`${this.baseUrl}/api/tournament/update/${theIdOfTheTournament}`,theUpdatedTournament,{withCredentials: true})
     .map((res)=> res.json())
   }
+
+
+  deleteThisTournament(theIdOfTheTournament){
+    return this.myhttp.delete(`${this.baseUrl}/api/tournament/delete/${theIdOfTheTournament}`,{withCredentials:true })
+    .map((res)=> res.json());
+  }
+  // updateTournament(theIdOfTheTournament){
+  //   console.log("a tournament gets edited: ===========>", theIdOfTheTournament)
+  //   return this.myhttp.post(`${this.baseUrl}/api/tournament/update/${theIdOfTheTournament}`)
+  //   .map((res)=> res.json())
+  // }
 
   addTeam(theIdOfTheEntry){
     console.log("testing out if the team is really getting pushed", theIdOfTheEntry);

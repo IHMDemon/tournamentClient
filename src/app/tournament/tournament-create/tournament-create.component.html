@@ -1,23 +1,28 @@
 <!-- refer to create tournament.component.ts -->
 <!-- <input type = "text" [(disabled)] = "newTask.title"> -->
+<div class="container center">
+  <br>
+  <br>
 
-<h1> CREATE A TOURNAMENT</h1>
-<form (submit) = "tryToCreateTournament()">
-  <label >Tournament Title: </label>
-  <input type = "text" [(ngModel)] = "newTournament.tournamentName" name = "tournament" placeholder = "some tournament name">
-  <br><br>
-  <label>Tournament description: </label>
-  <input type = "text" [(ngModel)] = "newTournament.tournamentDescription" name = "tournament" placeholder = "what is this about?"> 
-  <br><br>
-  <label>Tournament type: </label>
-  <input type = "text" [(ngModel)] = "newTournament.tournamentType" name = "tournament" placeholder = "type of tourney?">
-  <br><br>
-  <label>Tournament rules: </label>
-  <input type = "text" [(ngModel)] = "newTournament.rules" name = "tournament" placeholder = "wut u rules m8?">
-  <br><br>
-  <label>Number of teams: </label>
-  <input type = "text" [(ngModel)] = "newTournament.numberOfTeams" name = "tournament" placeholder = "u wot m8?">
-  <br><br>
-  <button>Submit New Tournament</button>
-</form>
+  <h1> CREATE A TOURNAMENT</h1>
+  <form (submit) = "tryToCreateTournament()">
+    <label >Tournament Title: </label>
+    <input type = "text" [(ngModel)] = "newTournament.tournamentName" name = "tournament" placeholder = "some tournament name">
+    <br><br>
+    <label>Tournament description: </label>
+    <input type = "text" [(ngModel)] = "newTournament.tournamentDescription" name = "tournament" placeholder = "what is this about?"> 
+    <br><br>
+    <label>Tournament type: </label>
+    <input type = "text" [(ngModel)] = "newTournament.tournamentType" name = "tournament" placeholder = "type of tourney?">
+    <br><br>
+    <label>Tournament rules: </label>
+    <input type = "text" [(ngModel)] = "newTournament.rules" name = "tournament" placeholder = "wut u rules m8?">
+    <br><br>
+    <label>Number of teams: </label>
+    <input type = "text" [(ngModel)] = "newTournament.numberOfTeams" name = "tournament" placeholder = "u wot m8?">
+    <br><br>
+    <button>Submit New Tournament</button>
+  </form>
 
+</div>
+  
