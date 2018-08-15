@@ -5,7 +5,7 @@
     <hr>
     
     
-<div >
+<div>
 <div *ngIf="theLoggedInUser !== undefined">
     <p>Hi {{theLoggedInUser.username}},</p>
     <a routerLink="/team/creation">Click here to make a team</a>
@@ -20,19 +20,22 @@
         <hr>
     </div>
 </div>
-<div class="row">
-<div class="col-lg-3 allTeams">
+</div>
+
 
 <!-- THIS SHOULD HOLD ALL THE TOURNAMENTS  -->
 <!-- ONCE WE ARE DONE MAKING ONE TOURNAMENT FUNCTION PROPERLY -->
-
-<app-all-teams></app-all-teams>
-</div>
-<div class="col-lg-4 allTeams">
 <app-tournament-bracket></app-tournament-bracket>
 
+<app-tournament-bracket></app-tournament-bracket>
+
+<div class="col-lg-12">
+
+<app-all-teams></app-all-teams>
+
 </div>
-</div>
+
+
 
 
 <!-- <div class = "right">
@@ -45,11 +48,9 @@
       <button (click) = "editTeam(team._id)">Edit</button>
       </div> -->
 <!-- INSERT NGFOR AND NGIF TO SEPARATE THE TEAMS -->
-<hr>
+
 <!-- <div class = "left"> -->
 <!-- <app-all-teams></app-all-teams> -->
-<!-- </div> -->
-<app-tournament-bracket></app-tournament-bracket>
 
 
 

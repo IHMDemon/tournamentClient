@@ -36,11 +36,13 @@ const routes: Routes = [
   },
   {
     path: 'allteams',
-    component: AllTeamsComponent
+    component: AllTeamsComponent,
+    data: { animation: 'allteams' } 
   },
   {
     path: 'team/creation',
-    component: TeamCreationComponent
+    component: TeamCreationComponent,
+    data: { animation: 'team/creation' }
   },
   {
     path:'team/:id',
@@ -52,6 +54,10 @@ const routes: Routes = [
   },
   { path: 'login',
     component: LoginFormComponent
+  },
+  {
+    path:'tournament/details/:id',
+    component: TournamentDetailsComponent
   },
   { path: 'tournament', 
     component: TournamentComponent 
@@ -65,10 +71,13 @@ const routes: Routes = [
   { path: 'alltournaments', 
     component: AllTournamentsComponent 
   },
+  
   {
     path:'tournament/:id',
-    component: TournamentDetailsComponent
+    component: TournamentBracketComponent
   },
+
+
 
   {
     path:'user/:id',

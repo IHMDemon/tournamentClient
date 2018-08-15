@@ -1,7 +1,12 @@
-<h2>Login Form</h2>
+<div class="container">
+  <div class="col-sm-2"></div>
 
-<form (submit)="logTheUserIn()">
-  
+
+  <div class="col-sm-8 center">
+    <h2>Login Form</h2>
+
+    <!-- <form (submit)="logTheUserIn()">
+
   <label>Username</label>
   <br>
   <input [(ngModel)]="theLoggedInUser.username" name="blahuser" type="text">
@@ -12,13 +17,38 @@
   <br>
   <button>Login</button>
 </form>
-<div class ="aProblem" *ngIf="theError">{{theError}}</div>
-<p>Don't have an account?<a routerLink="/signup">  signup</a></p>
+<div class="aProblem" *ngIf="theError">{{theError}}</div>
+<p>Don't have an account?
+  <a routerLink="/signup"> signup</a>
+</p> -->
 
+
+    <form (submit)="logTheUserIn()">
+      <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">username</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="theLoggedInUser.username" name="blahuser" type="text" class="form-control" placeholder="username">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" [(ngModel)]="theLoggedInUser.password" name="blahpass" placeholder="Password">
+        </div>
+      </div>
+      <div class="aProblem" *ngIf="theError">{{theError}}</div>
+      <p>Don't have an account?
+        <a routerLink="/signup"> signup</a>
+      </p>
+      <button>Login</button>
+    </form>
+  </div>
+  <div class="col-sm-2"></div>
+
+</div>
 <!-- STANDARD LOGIN FORM -->
 <!-- MADE IT THIS WAY SO WE CAN POP THIS UP ANYWHERE -->
 <!-- INCASE THE USER GETS KICKED OUT FROM  -->
 <!-- HAVING SHITTY INTERNET -->
 
 <!-- EDIT  TO LOGIN FORM -->
-

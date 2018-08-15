@@ -67,6 +67,15 @@ export class TournamentCreateComponent implements OnInit {
     console.log("see team list");
   }
 
+
+  // getTeamsInsideTheTournament(TheTournament){
+
+
+  // }
+
+
+
+
   // addTeam(teamer){
   //   this.tournamentService.addTeam(teamer)
   //   .subscribe(
