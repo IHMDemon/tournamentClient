@@ -3,19 +3,17 @@
   <br>
   <br>
   <br>
-<h3 >Team "{{theActualTeam.teamName}}"</h3>
+<h3>Team sup "{{theActualTeam.teamName}}"</h3>
 <!-- BAD IMAGE SYNTAX -->
 <!-- <img src ={{theActualTeam.teamLogo}} width =200px >
 <p><b>Description:  </b>  <i>{{theActualTeam.teamDescription}}</i></p>
 <p><b>Captain:   </b>  {{theActualTeam.teamCaptain.username}}</p> -->
 
 <!-- this is the proper img syntax -->
-<img [src] ="theActualTeam.teamLogo" width =400px >
-<br>
-<br>
-<h1>Description: <i>{{theActualTeam.teamDescription}}</i></h1>
-<h2 class="red">Captain: {{theActualTeam.teamCaptain.username}}</h2>
-
+<img [src] ="theActualTeam.teamLogo" width =200px >
+<p>Description: <i>{{theActualTeam.teamDescription}}</i></p>
+<p>Captain: {{theActualTeam.teamCaptain.username}}</p>
+<p>Team: {{theActualTeam|json}}</p>
 
 
 

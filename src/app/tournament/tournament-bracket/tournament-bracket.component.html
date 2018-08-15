@@ -1,18 +1,12 @@
 
-<div class = "container2">
-	<app-team-profile></app-team-profile>
-	<img src = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Versus_sign.png">
-	<app-team-profile></app-team-profile>
-
-
-<div *ngFor="let eachTeam of theTournamentTeams">
+<!-- <div *ngFor="let eachTeam of theTournamentTeams">
 	TeamName: {{eachTeam.teamName}}
-</div>
+</div> -->
 
 
 
 <!-- <div [style.visibility]="(assignAllTeamsToBracket == 0) ? 'hidden' : 'visible' "> -->
-		<button (click) = "assignAllTeamsToBracket()">ADVANCE TO NEXT ROUND</button>
+		<!-- <button (click) = "assignAllTeamsToBracket()">ADVANCE TO NEXT ROUND</button> -->
 	<!-- </div> -->
 
 <div class = "container">
@@ -23,20 +17,20 @@
 
 </div>
 
-<br>
-<p>LOSER BRACKET: </p>
+<!-- <br> -->
+<!-- <p>LOSER BRACKET: </p>
 
 <div *ngFor = "let team of this.teamBracket" class = "container-loser">
 	<div *ngIf="team.firstTeam.lose == true">
-			<!-- <div [ngStyle]="{'background-color': 'blue', 'border': 2px solid orange }">	something		</div> -->
+			<! <div [ngStyle]="{'background-color': 'blue', 'border': 2px solid orange }">	something		</div> -->
 
-			<input type="image" [src] = "team.firstTeam.teamLogo" name="saveForm" class="" id="saveForm" routerLink = "/team/{{team.firstTeam._id}}">
+			<!-- <input type="image" [src] = "team.firstTeam.teamLogo" name="saveForm" class="" id="saveForm" routerLink = "/team/{{team.firstTeam._id}}">
 		</div>
 	<div *ngIf="team.secondTeam.lose == true">
 			<input type="image" [src] = "team.secondTeam.teamLogo" name="saveForm" class="" id="saveForm" routerLink = "/team/{{team.secondTeam._id}}">
 
 	</div>
-</div>
+</div> -->
  
 <!-- LOSE CONDITION ::: ==============> team.firstTeam.lose -->
 		<!-- <img src = {{team.firstTeam.teamLogo}} class ="team-logo">

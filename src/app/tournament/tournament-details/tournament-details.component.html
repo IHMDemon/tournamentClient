@@ -1,37 +1,40 @@
-<h3>Details for "{{theActualTournament.tournamentName}}"</h3>
+<div class="center">
+  <br>
+  <br>
+  <h3>Details for "{{theActualTournament.tournamentName}}"</h3>
 
-<p> Administrator: <a [routerLink] = "['/user', theActualTournament.tournamentAdministrator._id]"> {{theActualTournament.tournamentAdministrator.username}}</a></p>
+  <p> Tournament Administrator:
+    <a [routerLink]="['/user', theActualTournament.tournamentAdministrator._id]"> {{theActualTournament.tournamentAdministrator.username}}</a>
+  </p>
 
-      <div>User Pool: This will be an ng for with the roster of players populated.
-      </div>
-    
-      <div>Teams This will be an ng for with the roster of teams populated.
 
-      </div>
+  <p>Tournament Description: {{theActualTournament.tournamentDescription}}</p>
 
-<p>Number of teams in this tournament: on express side, run a .length function on the roster after every update to the team roster.</p>
+  <p>Rules: {{theActualTournament.rules}}</p>
+  <p>Winner: To Be Determined</p>
 
-<p>Tournament Description:  {{theActualTournament.tournamentDescription}}</p>
+  <!-- <p><b>People in this Tournament:</b></p>
+    <div *ngFor="let player of theActualTournament.playerPool">
+      <p>     -{{player}}</p>
+    </div> -->
 
-<p>Rules: {{theActualTournament.rules}}</p>
-<p>Winner</p>
-
-<div *ngIf="theLoggedInUser !== undefined">
+  <div *ngIf="theLoggedInUser !== undefined">
     <hr>
     <p>Wanna play?</p>
-    <button (click)="userJoiningTournament()">Sign up for this Tournament</button>
-      <hr>
+    <button (click)="userJoiningTournament()">Sign me up for this Tournament</button>
+    <hr>
 
-  <button (click) = "teamSignUp = !teamSignUp">Sign My Team Up</button>
+    <button (click)="teamSignUp = !teamSignUp">Sign My Team Up</button>
 
     <div *ngIf="teamSignUp">
 
-          <h5>Choose Your Team :)</h5>         
-                <div *ngFor="let eachTeam of detailedUserInfo.teamCaptainOf">
-                  <!-- <form > -->
-                   <button (click)="teamJoiningTournament(eachTeam)">I choose {{eachTeam.teamName}}</button>
-                  <!-- </form> -->
-                </div>
+      <h5>Choose Your Team :)</h5>
+      <div *ngFor="let eachTeam of detailedUserInfo.teamCaptainOf">
+        <!-- <form > -->
+        <button (click)="teamJoiningTournament(eachTeam)">I choose {{eachTeam.teamName}}</button>
+        <!-- </form> -->
+      </div>
+    </div>
 
 
 
@@ -39,9 +42,9 @@
 
 
 
-        </div>
+  </div>
 
-      <hr>
+  
 </div>
 
 
@@ -84,52 +87,53 @@
 
 
 <div *ngIf="theLoggedInUser && theActualTournament.tournamentAdministrator._id === theLoggedInUser._id">
-    Only Tournament Administrators Can See This :)
+  Only Tournament Administrators Can See This :)
   <br>
-  <button (click) = "isShowingForm = !isShowingForm">Edit this Tournament</button>
-  
+  <button (click)="isShowingForm = !isShowingForm">Edit this Tournament</button>
+
   <br>
   <div *ngIf="isShowingForm">
-      <form (submit) = "updateThisTournament()">
-    
-        <label for="Tournament Name">Tournament Name</label><br>
-        <input type="text" id=tournamentName-input [(ngModel)]="theActualTournament.tournamentName" [value]="theActualTournament._id" name="id">
-        <br>
-        <br>
-        <label>Tournament Logo URL</label>
-        <br><input  [(ngModel)]="theActualTournament.tournamentLogo" name="tournamentName" type="text">
-        <br>
-        <br>
-      
-        <label>Tournament Description</label>
-        <br><textarea [(ngModel)]="theActualTournament.tournamentDescription" name="TournamentDescription" type="text" [value]="theActualTournament.tournamentDescription"></textarea>
-        <br>
-        <br>
-    
+    <form (submit)="updateThisTournament()">
 
-        
-      
-        <button>Save Changes</button>
-      </form>
-    </div>
-  
-
-
-  
+      <label for="Tournament Name">Tournament Name</label>
       <br>
-  <button (click) ="showMe = !showMe">Delete this Tournament</button>
+      <input type="text" id=tournamentName-input [(ngModel)]="theActualTournament.tournamentName" [value]="theActualTournament._id"
+        name="id">
+      <br>
+      <br>
+      <label>Tournament Logo URL</label>
+      <br>
+      <input [(ngModel)]="theActualTournament.tournamentLogo" name="tournamentName" type="text">
+      <br>
+      <br>
+
+      <label>Tournament Description</label>
+      <br>
+      <textarea [(ngModel)]="theActualTournament.tournamentDescription" name="TournamentDescription" type="text">{{theActualTournament.tournamentDescription}}</textarea>
+      <br>
+      <br>
+
+
+
+
+      <button>Save Changes</button>
+    </form>
+  </div>
+
+
+
+
+  <br>
+  <button (click)="showMe = !showMe">Delete this Tournament</button>
 
   <div *ngIf="showMe">
-      <h1 style="color:red">WARNING</h1>
-      <h6>Once you delete your tournament, there is no going back. Are you sure?</h6>
-  
-      <button class="TRUE-DELETE">Destroy this Tournament</button>
-      </div>
+    <h1 style="color:red">WARNING</h1>
+    <h6>Once you delete your tournament, there is no going back. Are you sure?</h6>
+    <form (submit)="deleteTournament()">
+    <button class="TRUE-DELETE">Destroy this Tournament</button>
+    </form>
   </div>
-  
-  <br>
-  <br>
+</div>
 
-  
-  
-  
+<br>
+<br>

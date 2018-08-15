@@ -2,7 +2,7 @@
        
     <div class="col-lg-12">
         <!-- REPLACE LOCALHOST WITH BASEURL ENV VARIABLE -->
-        <img class="logo" src="http://localhost:3000/Images/at.svg" alt="">
+        <img class="logo" src="https://res.cloudinary.com/duschand1111/image/upload/v1533909744/folder-name/at.svg" alt="">
         <br>
         <br>
         <br>
@@ -40,12 +40,11 @@
 
     <div class="row space">
         <div class="space" *ngFor="let team of allTheTeams">
-            <div class="card  " style="width: 22rem; margin: 3px;">
-                <img class="card-img-top img"  src="{{team.teamLogo}}" alt="Card image cap">
-                <br>
-                
-                <h4>Team Name:
-                    <br> {{team.teamName}}</h4>
+            <div class="card  " style="width: 18rem;">
+                <img class="card-img-top" src="{{team.teamLogo}}" alt="Card image cap">
+                <h4>Team Name:<br> {{team.teamName}} <br> {{team.teamRoster[0]}}</h4>
+
+
                 <!-- THIS IS THE PROPER WAY TO ROUTERLINK -->
                 <a class="a" [routerLink]="['/team', team._id]">Team details.</a>
                 <br>

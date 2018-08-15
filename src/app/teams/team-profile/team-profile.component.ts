@@ -67,13 +67,23 @@ export class TeamProfileComponent implements OnInit {
       .subscribe((afterTheUpdateOfTeamIsDone)=>{
       // we should change this.router line to show user that a change was successful 
         // this.router.navigate([`/team/${this.theActualTeam._id}`])
+        this.router.navigate(['/allteams'])
+
         console.log('change was a success!')
 
       })
     }
 
 
-
+    deleteThisTeam(){
+      console.log('delete button clicked')
+      this.TeamService.deleteThisTeam(this.theActualTeam._id)
+      .subscribe((afterTheDeletingHasHappened)=>{
+        this.router.navigate(['/allteams'])
+      })
+        // ROUTER NAVIGATE TO MY TEAMS: set up the my teams in express
+      
+    }
 
 
 

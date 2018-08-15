@@ -35,7 +35,7 @@ errorCallback(errorObject) {
 
 //checks if the person is logged in and pulls the information into this component.
 checkIfLoggedIn() {
-  this.userService.checkIfLoggedIn()
+  this.userService.checkIfLoggedIn2()
   
     .subscribe(
       res => {

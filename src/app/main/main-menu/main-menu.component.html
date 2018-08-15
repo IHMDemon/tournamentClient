@@ -1,6 +1,8 @@
 <br>
 <br>
-<br>
+
+
+<div [@bounce]="bounceInDown" class="container yea">
 <div *ngIf="theLoggedInUser !== undefined">
     <h1 class="welcome-page">Welcome,{{theLoggedInUser.username|json}}</h1>
     <br>
@@ -15,26 +17,27 @@
     <div class="container">
 
         <div>
-            <input type="image" src="http://localhost:3000/Images/ct2.svg" name="saveForm" class="btn-images first" id="saveForm" routerLink="/tournament/create">
+            <input type="image" src="https://res.cloudinary.com/duschand1111/image/upload/v1533909855/folder-name/ct2.svg" name="saveForm" class="btn-images first" id="saveForm" routerLink="/tournament/create">
            
         </div>
 
 
         <div>
-            <input type="image" src="http://localhost:3000/Images/hb1.svg"
+            <input type="image" src="https://res.cloudinary.com/duschand1111/image/upload/v1533909861/folder-name/hb1.svg"
                 name="saveForm" class="btn-images" id="saveForm" routerLink="/team/creation/">
          
         </div>
+
         <div class="pad">
             <input type="image" src="http://tradeshowinfotainer.com/wp-content/uploads/2012/06/crowd-of-people1-1080x675.jpg" name="saveForm"
-                class="btn-images" id="saveForm" routerLink="/team/list">
-            <p class="  link-text">JOIN TEAM</p>
+                class="btn-images" id="saveForm" routerLink="/allteams">
+            <p class="  link-text">SEE TEAMS</p>
         </div>
 
         <div class="pad" >
-            <input type="image" src="http://sticknodes.com/thumbs/thumb_tournamentsetup.png" name="saveForm" class="btn-images" id="saveForm"
-                routerLink="/tournament">
-            <p class=" link-text">JOIN TOURNAMENT</p>
+            <input type="image" src="https://res.cloudinary.com/duschand1111/image/upload/v1533911360/thumb_tournamentsetup.png" name="saveForm" class="btn-images " id="saveForm"
+                routerLink="/alltournaments">
+            <p class=" link-text">SEE TOURNAMENTS</p>
         </div>
 
     </div>
@@ -44,6 +47,7 @@
 </div>
 <!-- End main menu for LOGGED IN USERS -->
 
+<div class="yea">
 
 <div *ngIf="theLoggedInUser === undefined">
     <h2> Hi there, spectator</h2>
@@ -53,7 +57,7 @@
         <a routerLink="/signup">sign up here</a>
     </p>
     <br>
-    <hr>
+    
 </div>
 
 
@@ -62,3 +66,5 @@
 
 <!-- THESE ARE JUST LINKS WITH EXTRA BACKEND UPDATE FEATURES -->
 <!-- EVAN CAN START DESIGNING THIS -->
+
+</div>
