@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-landingpage',
+  // animations: [ routerTransition ],
+  // template: 
+  // <main [@routerTransition]="getState(o)">
   templateUrl: './landingpage.component.html',
   styleUrls: ['./landingpage.component.css']
 })

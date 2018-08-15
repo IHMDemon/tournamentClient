@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -25,6 +26,9 @@ import { AllTournamentsComponent } from './tournament/all-tournaments/all-tourna
 import { TournamentDetailsComponent } from './tournament/tournament-details/tournament-details.component';
 import { TweenMeComponent } from './tween-me/tween-me.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+
+
+
 // import 'gsap';
 const routes: Routes = [
   // {path: 'tweenme',
@@ -121,6 +125,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(

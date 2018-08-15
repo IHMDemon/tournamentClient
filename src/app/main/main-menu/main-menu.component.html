@@ -1,6 +1,8 @@
 <br>
 <br>
-<div class="container yea">
+
+
+<div [@bounce]="bounceInDown" class="container yea">
 <div *ngIf="theLoggedInUser !== undefined">
     <header class="welcome-page">Welcome, {{theLoggedInUser.username|json}}</header>
     <br>
